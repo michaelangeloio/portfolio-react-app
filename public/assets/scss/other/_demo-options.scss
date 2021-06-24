@@ -1,0 +1,143 @@
+/*------------------------------------
+    Demo Options
+------------------------------------*/
+
+.app-demo-options {
+    top: 0;
+    right: -330px;
+    width: 330px;
+    color: #000;
+    direction: ltr;
+    z-index: 99999;
+    position: fixed;
+    background: #fff;
+    transition: right 750ms;
+    font-family: $font-family-1;
+
+    .app-demo-options-panel {
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+        max-width: 330px;
+        min-height: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        visibility: hidden;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+        transition: all 600ms;
+        
+        .app-demo-options-item {
+            float: left;
+            padding-bottom: 30px;
+        }
+        .app-demo-options-close {
+            top: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 21px;
+            line-height: 45px;
+            text-align: center;
+            position: absolute;
+        }
+        .app-demo-options-title {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: left;
+            padding: 24px 30px;
+        }
+        .app-demo-options-subtitle {
+            display: block;
+            direction: ltr;
+            font-size: 16px;
+            font-weight: 500;
+            text-align: left;
+            padding: 30px 30px;
+            border-top: 1px solid #ccc;
+        }
+        .app-demo-options-colors {
+            padding: 0 30px;
+            list-style: none;
+            margin-bottom: 0;
+            margin-left: -3px;
+            margin-right: -3px;
+            text-align: center;
+
+            li {
+                width: 36px;
+                height: 36px;
+                float: left;
+                cursor: pointer;
+                border-radius: 50%;
+                list-style: none;
+                margin: 3px;
+            }
+        }
+        .app-demo-options-layout {
+            list-style: none;
+            padding: 0 30px;
+
+            li {
+                padding: 0 6px;
+                a {
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+                    padding-bottom: 30px;
+                    margin-bottom: 12px;
+                    border-radius: 3px;
+                    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3), 0 3px 12px rgba(0, 0, 0, 0.21);
+                }
+                span {
+                    left: 0;
+                    right: 0;
+                    height: 30px;
+                    bottom: 0;
+                    display: block;
+                    font-size: 14px;
+                    text-align: center;
+                    white-space: nowrap;
+                    padding-top: 4px;
+                    position: absolute;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    .app-demo-options-toggle {
+        top: 120px;
+        left: -45px;
+        width: 45px;
+        height: 45px;
+        color: #fff;
+        cursor: pointer;
+        opacity: 0.75;
+        font-size: 27px;
+        line-height: 50px;
+        position: absolute;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.3);
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        transition: right 900ms;
+
+        i {
+            transition: all 3s;
+            animation: rotation 6s infinite linear;
+        }
+        &:hover {
+            opacity: 1;
+            background: #000;
+        }
+    }
+    &.active {
+        right: 0;
+
+        .app-demo-options-panel {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
