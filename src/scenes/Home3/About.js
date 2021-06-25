@@ -21,7 +21,7 @@ function About() {
                                         <span className="el-icon-title">Hello</span>
                                     </h2>
                                     <h3>
-                                        <span>I am John Woo.</span>
+                                        <span>I am Michael Angelo Rivera.</span>
                                     </h3>
                                     <div className="divider divider-1"></div>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim enim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

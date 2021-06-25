@@ -67,7 +67,7 @@ function Home() {
 
     return (
         <div>
-            <Helmet title="Home 3" />
+            <Helmet title="Michael Angelo Rivera" />
             <Header />
             <Switch>
                 <Route path={path} exact>

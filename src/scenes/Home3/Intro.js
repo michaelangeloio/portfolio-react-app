@@ -4,19 +4,19 @@ import { Container } from "react-grid-system";
 
 function Intro() {
     return (
-        <section className="section section-hero section-hero-3 overlay-image" style={{ backgroundImage: `url(/assets/images/hero/3-1.jpg)` }}>
+        <section className="section section-hero section-hero-3 overlay-image" style={{ backgroundImage: `url(https://michaelangrivera-media.s3.us-east-2.amazonaws.com/main_photo.jpg)` }}>
             <div className="display-center">
                 <Container>
                     <div className="el-heading">
-                        <p className="el-icon">
-                            <span className="el-icon-title">Hello.</span>
-                        </p>
-                        <h1>
-                            John Woo is a{" "}
+                        
+                            <span className="el-icon-title" style={{ color: 'black' }}>print('hello')   Hello.</span>
+                      
+                        <h1 style={{ color: 'black' }}>
+                            Michael Angelo is a{" "}
                             <TextLoop>
-                                <span>Documentary Filmmaker</span>
-                                <span>Traveller Blogger</span>
-                                <span>Documentary Photographer</span>
+                                <span>Technology Developer</span>
+                                <span>Percussion Enthusiast</span>
+                                <span>Endurance Athlete</span>
                             </TextLoop>
                         </h1>
                         <button className="button button-lg button-primary">

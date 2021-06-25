@@ -5,7 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 // Stylesheet
 import "./index.scss";
 // Scenes
-import Demo from "./scenes/Demo";
+// import Demo from "./scenes/Demo";
 // import Home from "./scenes/Home";
 // import Home2 from "./scenes/Home2";
 import Home3 from "./scenes/Home3";
@@ -20,10 +20,12 @@ const Root = () => {
     return (
         <div>
             <Switch>
-                <Route exact path="/" component={Home3} />
+                 <Route exact path="/" component={Home3} />
+                <Route path="/" component={Home3} />
+                
                 {/* <Route path="/home-1" component={Home} />
                 <Route path="/home-2" component={Home2} /> */}
-                {/* <Route path="/home-3" component={Home3} /> */}
+              
                 {/* <Route path="/home-4" component={Home4} />
                 <Route path="/home-5" component={Home5} />
                 <Route path="/home-6" component={Home6} /> */}

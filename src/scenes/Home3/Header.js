@@ -52,8 +52,13 @@ function Header() {
     return (
         <>
             <header className="app-header app-header-1">
-                <div className="header-logo">
-                    <Link to={`url`.replace(/([^:])(\/\/+)/g, "$1/")}>Miro.</Link>
+                <div className="header-logo" >
+                <button className="button button-lg button-light">
+                          
+                            <Link to={`url`.replace(/([^:])(\/\/+)/g, "$1/")}>Michael Angelo Rivera</Link>
+                        
+                        </button>
+                    
                 </div>
                 <button className="button button-menu" onClick={(e) => handleClick(e)}>
                     <span></span>
@@ -100,7 +105,7 @@ function Header() {
             <div className={`app-sidenav ${displaySidenav && "active"}`}>
                 <div className="sidenav-menu">
                     <div className="logo">
-                        <Link to={`url`.replace(/([^:])(\/\/+)/g, "$1/")}>Miro</Link>
+                        <Link to={`url`.replace(/([^:])(\/\/+)/g, "$1/")}>Michael Angelo Rivera</Link>
                     </div>
                     <button className="button" onClick={(e) => handleClick(e)}></button>
                     <ul className="sidenav-nav">
