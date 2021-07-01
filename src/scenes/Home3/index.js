@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { Route, Redirect, useRouteMatch } from "react-router-dom";
+import { Fragment } from 'react';
+
 // Sections
 import Blog from "./Blog";
 import About from "./About";
@@ -68,8 +70,10 @@ function Home() {
     return (
         <div>
             <Helmet title="Michael Angelo Rivera" />
+            
             <Header />
             <Switch>
+         
                 <Route path={path} exact>
                     <Redirect
                         to={{
@@ -83,7 +87,9 @@ function Home() {
                     </Route>
                 ))}
                 <Route component={RedirectAs404} />
+
             </Switch>
+        
         </div>
     );
 }

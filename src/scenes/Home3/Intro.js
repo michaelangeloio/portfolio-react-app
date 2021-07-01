@@ -9,7 +9,7 @@ function Intro() {
                 <Container>
                     <div className="el-heading">
                         
-                            <span className="el-icon-title" style={{ color: 'black' }}>print('hello')   Hello.</span>
+                            {/* <span className="el-icon-title" style={{ color: 'black' }}>['Hello there']</span> */}
                       
                         <h1 style={{ color: 'black' }}>
                             Michael Angelo is a{" "}

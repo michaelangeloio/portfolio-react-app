@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRouteMatch, NavLink, Link } from "react-router-dom";
 import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
+import {withRouter} from 'react-router'
 // Components
 import DemoOptions from "../../components/common/DemoOptions";
 
@@ -14,7 +15,7 @@ const links = [
         path: "/about",
     },
     {
-        title: "Resume",
+        title: "Timeline",
         path: "/resume",
     },
     {
@@ -49,15 +50,16 @@ function Header() {
         setDisplaySidenav(!displaySidenav);
     };
 
+    
     return (
         <>
             <header className="app-header app-header-1">
-                <div className="header-logo" >
-                <button className="button button-lg button-light">
-                          
-                            <Link to={`url`.replace(/([^:])(\/\/+)/g, "$1/")}>Michael Angelo Rivera</Link>
+                <div className="header-logo" style={{ img: '#5cab86' }} >
+                <NavLink to="/#">
+                <img src={'https://michaelangrivera-media.s3.us-east-2.amazonaws.com/logo.png'} alt="Logo" />
+                            {/* <Link to={`url`.replace(/([^:])(\/\/+)/g, "$1/")}>Michael Angelo Rivera</Link> */}
                         
-                        </button>
+                </NavLink>
                     
                 </div>
                 <button className="button button-menu" onClick={(e) => handleClick(e)}>
@@ -84,18 +86,18 @@ function Header() {
                 <div className="header-follow">
                     <ul>
                         <li>
-                            <a href="/#">
-                                <i className="ti-twitter-alt"></i>
+                            <a href="https://instagram.com/michaelangrivera">
+                                <i className="ti-instagram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="/#">
+                            <a href="https://www.linkedin.com/in/michaelangelorivera/">
+                                <i className="ti-linkedin"></i>
+                            </a>
+                        </li>                        
+                        <li>
+                            <a href="https://github.com/michaelangrivera?tab=repositories">
                                 <i className="ti-github"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/#">
-                                <i className="ti-vimeo-alt"></i>
                             </a>
                         </li>
                     </ul>
