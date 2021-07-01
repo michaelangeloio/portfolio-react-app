@@ -31,7 +31,7 @@ const skills = [
 ];
 const education = [
     {
-        title: "Art University",
+        title: "Emory University",
         subtitle: "Art Director Course | New York",
         description: "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.",
         date: "(2016-2018)",
