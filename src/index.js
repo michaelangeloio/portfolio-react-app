@@ -1,46 +1,117 @@
-import React from "react";
+
 import ReactDOM from "react-dom";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, BrowserRouter, Route } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 // Stylesheet
 import "./index.scss";
-// Scenes
-// import Demo from "./scenes/Demo";
-// import Home from "./scenes/Home";
-// import Home2 from "./scenes/Home2";
-import Home3 from "./scenes/Home3";
-// import Home4 from "./scenes/Home4";
-// import Home5 from "./scenes/Home5";
-// import Home6 from "./scenes/Home6";
-// Components
-import Error404 from "./components/common/Error404";
-import RedirectAs404 from "./components/common/RedirectAs404";
 
-const Root = () => {
+import React, { useEffect } from "react";
+import {Redirect, useRouteMatch } from "react-router-dom";
+import { Fragment } from 'react';
+
+// Sections
+import Blog from "./Blog";
+import About from "./About";
+import Intro from "./Intro";
+import Header from "./Header";
+import Resume from "./Resume";
+import Service from "./Service";
+import Contact from "./Contact";
+import Portfolio from "./Portfolio";
+import Testimonial from "./Testimonial";
+import BlogSinglePost from "./BlogSinglePost";
+// Components
+import Helmet from "./components/common/Helmet";
+import PageSwitch from "./components/common/PageSwitch";
+import RedirectAs404 from "./components/common/RedirectAs404";
+import Error404 from "./components/common/Error404";
+
+
+const routes = [
+    {
+        path: "intro",
+        component: <Intro />,
+    },
+    {
+        path: "about",
+        component: <About />,
+    },
+    {
+        path: "resume",
+        component: <Resume />,
+    },
+    {
+        path: "service",
+        component: <Service />,
+    },
+    {
+        path: "portfolio",
+        component: <Portfolio />,
+    },
+    {
+        path: "blog",
+        component: <Blog />,
+    },
+    {
+        path: "blog/single-post",
+        component: <BlogSinglePost />,
+    },
+    {
+        path: "testimonial",
+        component: <Testimonial />,
+    },
+    {
+        path: "contact",
+        component: <Contact />,
+    },
+];
+
+function Root() {
+    let { path } = useRouteMatch();
+
+    useEffect(() => {
+        document.documentElement.className = "home-3 skin-3";
+        return () => {
+            document.documentElement.className = "";
+        };
+    });
+
     return (
         <div>
-            <Switch>
-                 <Route exact path="/" component={Home3} />
-                <Route path="/" component={Home3} />
-                
-                {/* <Route path="/home-1" component={Home} />
-                <Route path="/home-2" component={Home2} /> */}
-              
-                {/* <Route path="/home-4" component={Home4} />
-                <Route path="/home-5" component={Home5} />
-                <Route path="/home-6" component={Home6} /> */}
+            <Helmet title="Michael Angelo Rivera" />
+            
+            <Header />
+            <PageSwitch>
+         
+                <Route path={path} exact>
+                    <Redirect
+                        to={{
+                            pathname: `${path}intro`.replace(/([^:])(\/\/+)/g, "$1/"),
+                        }}
+                    />
+                </Route>
+                {routes.map((item, index) => (
+                    <Route key={index} path={`${path}${item.path}`} exact>
+                        {item.component}
+                    </Route>
+                ))}
                 <Route component={RedirectAs404} />
-            </Switch>
+
+            </PageSwitch>
+        
         </div>
     );
-};
+}
 
 ReactDOM.render(
-    <HashRouter>
+    <BrowserRouter>
         <div>
             <Route render={({ location }) => (location.state && location.state.is404 ? <Error404 /> : <Root />)} />
         </div>
-    </HashRouter>,
+    </BrowserRouter>,
     document.getElementById("root")
 );
 serviceWorker.unregister();
+
+
+

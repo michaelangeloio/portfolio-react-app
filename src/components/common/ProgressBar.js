@@ -1,13 +1,16 @@
 import React from "react";
 
 function ProgressBar(props) {
-    const { label, min, max, percent } = props;
+    const { label, subtext, min, max, percent } = props;
     return (
         <div className="el-progress">
             {label && (
                 <h5 className="el-icon">
                     <span className="el-icon-label">{label}</span>
                 </h5>
+            )}
+            {subtext && (
+                <p>{subtext}</p>
             )}
             {percent && <span className="el-progress-count">{`% ${percent}`}</span>}
             <div className="el-progress-line">

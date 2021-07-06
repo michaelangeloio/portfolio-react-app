@@ -3,6 +3,11 @@
 ------------------------------------*/
 
 .app-demo-options {
+    display: none;
+}
+@media only screen and (min-width: 768px) {
+
+.app-demo-options {
     top: 0;
     right: -330px;
     width: 330px;
@@ -13,6 +18,7 @@
     background: #fff;
     transition: right 750ms;
     font-family: $font-family-1;
+
 
     .app-demo-options-panel {
         width: 100%;
@@ -51,7 +57,7 @@
         .app-demo-options-subtitle {
             display: block;
             direction: ltr;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 500;
             text-align: left;
             padding: 30px 30px;
@@ -140,4 +146,5 @@
             visibility: visible;
         }
     }
+}
 }

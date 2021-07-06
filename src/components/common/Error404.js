@@ -9,7 +9,7 @@ function error404() {
                     <h1>404!</h1>
                     <h3>Page not found</h3>
                     <p>The page you were looking for could not be found.</p>
-                    <Link to="/home-1/intro">
+                    <Link to="/">
                         <button className="button button-lg button-primary">
                             <span className="wave"></span>
                             <span className="text">BACK TO HOMEPAGE</span>
