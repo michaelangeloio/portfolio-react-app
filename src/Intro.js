@@ -55,7 +55,7 @@ function Intro() {
                         >
                             <span className="wave"></span>
                             <Link to="/about">
-                            <span className="text">See More</span>
+                            <span className="text">TEST</span>
                             </Link>
                         </button>
                         <button className="button button-lg button-light">
