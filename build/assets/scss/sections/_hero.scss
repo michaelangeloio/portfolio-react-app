@@ -1,0 +1,119 @@
+/*------------------------------------
+    Hero
+------------------------------------*/
+
+.section-hero {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+// Hero 1
+.section-hero-1 {
+    .el-heading {
+        .el-icon {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Hero 2
+.section-hero-2 {
+    .el-heading {
+        float: right;
+
+        .el-icon {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Hero 4
+.section-hero-4 {
+    .el-slider {
+        width: 100%;
+        height: 100vh;
+
+        .slide {
+            .image {
+                height: 100vh;
+            }
+        }
+        .slick-dots {
+            z-index: 6;
+            bottom: 60px !important;
+        }
+    }
+    .el-particles {
+        opacity: 0.3;
+    }
+    .display-center {
+        z-index: 3;
+    }
+}
+
+// Hero 5
+.section-hero-5 {
+    .el-icon {
+        .icon {
+            position: relative;
+            margin-left: 3px;
+            animation: MoveUpDown 1s linear infinite;
+        }
+    }
+    .el-heading {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        h1 {
+            font-size: 42px;
+        }
+    }
+}
+
+// Hero 6
+.section-hero-6 {
+    &:before {
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        z-index: 15;
+        opacity: 0.75;
+        content: "";
+        position: fixed;
+        background: $base-0;
+    }
+    .display-center {
+        z-index: 18;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-hero-2 {
+        background-position: center left;
+        .el-heading {
+            float: inherit !important;
+        }
+        .display-center {
+            z-index: 3;
+        }
+        &:after {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            opacity: 0.45;
+            position: absolute;
+            background-color: $base-0;
+        }
+    }
+    .section-hero-5 {
+        .el-heading {
+            h1 {
+                font-size: 24px !important;
+            }
+        }
+    }
+}

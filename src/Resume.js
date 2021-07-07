@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Row, Col } from "react-grid-system";
 // Components
 import ProgressBar from "./components/common/ProgressBar";
+import {Link} from "react-router-dom";
 
 
 const skills = [
     {
         title: "Typing Fast",
-        details: " test",
         percent: 100,
     },
     {
@@ -20,34 +20,46 @@ const skills = [
     },
     {
         title: "SQL",
+        details: "T-SQL & SQL Server DBA, Db2, Postgres, MySQL",
         percent: 90,
     },
     {
         title: "Python",
+        details: " > 3.x, Pandas, Logging, Requests, etc",        
         percent: 90,
     },
     {
         title: "AWS",
+        details: "S3, EC2 (Ubuntu AMI), Route53, Amplify, RDS, more",     
         percent: 60,
+    },
+    {   title: "Docker",
+        details: "Developement for SheetScience",
+        percent: 70
     },
     {
         title: "JavaScript",
+        details: "React JS, Mithril JS",
         percent: 70,
     },
     {
         title: "PowerBI",
+        details: "Data Modeling, Dashboard Design, PowerQuery, M",
         percent: 90,
     },
     {
         title: "SAS Programming",
+        details: "PROC SQL, Data Steps, Macro Development, etc",
         percent: 90,
     },
     {
         title: "QlikSense & QlikView",
+        details: "Data Load Editing, QVWs, Modeling",
         percent: 70,
     },
     {
         title: "PHP",
+        details: "Laravel, Artisan, Composer",
         percent: 70,
     }
 ];
@@ -167,7 +179,7 @@ function Resume() {
                     </Row>
                 </Container>
                 <Container>
-                    <h6> Some Technologies I've worked with</h6>
+                    <h6 style={{marginTop: -50}}> Some Technologies I've worked with</h6>
                     <div className="divider divider-1"></div>
                     <Row>
                         {skills.map((item, index) => (
@@ -181,6 +193,12 @@ function Resume() {
                         ))}
                     </Row>
                     <p ><i>Percentages are in terms of comfortability in getting around. Can someone actually be a 100% expert in Python?</i></p>
+
+                    <div className="div-center text-center">
+                        <Link to="/portfolio" >
+                        <button className="button button-md button-primary" style= {{marginTop: 30}}>See My Portfolio</button>
+                        </Link>
+                     </div>
                 </Container>
             </div>
         </section>

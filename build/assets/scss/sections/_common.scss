@@ -1,0 +1,84 @@
+/*------------------------------------
+    Section
+------------------------------------*/
+
+.section {
+    width: 100vw;
+    display: block;
+    max-width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    .section-inner-sidebar {
+        left: 0;
+        bottom: 0;
+        width: 40%;
+        height: 100vh;
+        position: fixed;
+        background-color: $primary;
+
+        .el-page-gallery {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .section-inner-content {
+        right: 0;
+        bottom: 0;
+        width: 60%;
+        height: 100%;
+        float: right;
+        overflow-y: scroll;
+        padding: 0 50px;
+        -ms-overflow-style: none;
+        background-color: $base-0;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    &.section-wave-1 {
+        &:after {
+            left: 0;
+            bottom: -1px;
+            width: 100%;
+            height: 20%;
+            content: "";
+            position: absolute;
+            background: no-repeat url("/assets/images/shapes/wave-1.png") bottom center / cover;
+        }
+    }
+    &.section-wave-2 {
+        &:after {
+            left: 0;
+            bottom: -90px;
+            width: 100%;
+            height: 20%;
+            content: "";
+            position: absolute;
+            background: no-repeat url("/assets/images/shapes/wave-2.png") bottom center / cover;
+        }
+    }
+    &.section-wave-3 {
+        &:after {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 300px;
+            content: "";
+            position: absolute;
+            background: no-repeat url("/assets/images/shapes/wave-3.png") bottom center / cover;
+        }
+    }
+    &.section-wave-6 {
+        &:after {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            content: "";
+            position: absolute;
+            background: repeat-x url("/assets/images/shapes/wave-6.png") bottom center / contain;
+        }
+    }
+}

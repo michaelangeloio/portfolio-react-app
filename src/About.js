@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { Container, Hidden, Row, Col } from "react-grid-system";
 
 
@@ -44,7 +45,7 @@ function About() {
                                             </div>
                                             <div className="content">
                                                 <h5>Data & Analytics</h5>
-                                                <p>Nuumbers are cool, but numbers turned into stories are cooler.</p>
+                                                <p>Numbers are cool, but numbers turned into stories are cooler.</p>
                                             </div>
                                         </div>
                                     </Col>
@@ -103,11 +104,27 @@ function About() {
                                             </div>
                                         </div>
                                     </Col>
+                                    <div className="divider divider-1"></div>
                                 </Row>
                             </div>
+                            <p style={{marginTop : 20}}></p>
+
+                            <Link to="/resume" >
+                            <button className="button button-md button-primary">See My Work History</button>
+                            </Link>
+                            <Link to="/endurance">
+                            <button className="button button-md button-primary">Check Out My Hobbies</button>
+                            </Link>  
+
                         </Col>
+       
                     </Row>
+
                 </Container>
+
+
+            
+               
             </div>
         </section>
     );

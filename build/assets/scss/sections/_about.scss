@@ -1,0 +1,98 @@
+.section-about-1 {
+    .about-image {
+        height: 100%;
+        position: relative;
+
+        .image {
+            top: 0;
+            left: 15px;
+            right: 15px;
+            height: 100%;
+            position: absolute;
+        }
+    }
+}
+
+.section-resume-1 {
+    ul {
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: block;
+            position: relative;
+
+            &:after {
+                top: -18px;
+                left: 0;
+                width: 1px;
+                height: 100%;
+                content: "";
+                position: absolute;
+                background-color: $base-1;
+            }
+        }
+    }
+    .resume-title {
+        z-index: 3;
+        line-height: 1;
+        position: relative;
+        padding-left: 35px;
+
+        &:before {
+            top: 5px;
+            left: -7px;
+            width: 15px;
+            height: 15px;
+            display: block;
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+    }
+    .resume-item {
+        position: relative;
+
+        p {
+            font-size: 12px;
+            font-weight: 500;
+            padding-left: 10px;
+            margin-bottom: 0;
+        }
+        .resume-body {
+            padding: 20px 36px;
+        }
+        .resume-head {
+            position: relative;
+            padding-top: 30px;
+            padding-left: 90px;
+            margin-bottom: 10px;
+
+            h5 {
+                color: $base-1;
+                font-size: 14px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            h6 {
+                color: $base-1;
+                font-size: 12px;
+            }
+            .el-icon {
+                top: 26px;
+                left: 24px;
+                position: absolute;
+            }
+        }
+        &:before {
+            top: 43px;
+            left: 0;
+            width: 25px;
+            height: 1px;
+            content: "";
+            position: absolute;
+            background-color: $base-1;
+        }
+    }
+}

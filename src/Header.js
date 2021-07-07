@@ -15,12 +15,16 @@ const links = [
         path: "about",
     },
     {
-        title: "Timeline",
+        title: "Career",
         path: "resume",
     },
     {
-        title: "Service",
-        path: "service",
+        title: "Endurance",
+        path: "endurance"
+    },
+    {
+        title: "Percussion",
+        path: "percussion",
     },
     {
         title: "Portfolio",
@@ -30,10 +34,10 @@ const links = [
         title: "Blog",
         path: "blog",
     },
-    {
-        title: "Testimonial",
-        path: "testimonial",
-    },
+    // {
+    //     title: "Testimonial",
+    //     path: "testimonial",
+    // },
     {
         title: "Contact",
         path: "contact",

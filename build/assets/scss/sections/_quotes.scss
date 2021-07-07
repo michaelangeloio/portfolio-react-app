@@ -1,0 +1,93 @@
+
+/*------------------------------------
+testimonial
+------------------------------------*/
+/* 
+* testimonial 
+*/
+.section-testimonial-1 {
+    .slick-dots {
+        top:0;
+        right: 15px;
+        bottom: inherit;
+        position: absolute;
+        text-align: right;
+        display: inline-block;
+    }
+}
+.section-testimonial-1 .testimonial-item {
+    position: relative;
+    padding: 30px;
+    border: 1px solid $base-1;
+    background-color: $base-0;
+}
+.section-testimonial-1 .testimonial-item p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+.section-testimonial-1 .testimonial-item .type {
+    font-size: 16px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    margin: 0 15px 30px;
+}
+.section-testimonial-1 .testimonial-item .type span {
+    z-index: 6;
+    position: relative;
+}
+.section-testimonial-1 .testimonial-item .type:after {
+    left: -16px;
+    bottom: -6px;
+    width: 36px;
+    height: 36px;
+    opacity: 0.75;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: $primary;
+}
+.section-testimonial-1 .testimonial-item .author {
+    height: 50px;
+    position: relative;
+    padding-left: 65px;
+}
+.section-testimonial-1 .testimonial-item .author h4 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+.section-testimonial-1 .testimonial-item .author h5 {
+    color: $base-1;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+.section-testimonial-1 .testimonial-item .author img {
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-radius: 50%;
+}
+.section-testimonial-1 .lets-work {
+    text-align: center;
+    padding-top: 90px;
+    position: relative;
+}
+.section-testimonial-1 .lets-work .button {
+    top: 0px;
+}
+@media (max-width: 992px) {
+    .section-testimonial-1 .shape-2 {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .section-testimonial-1 .testimonial-item {
+        padding: 20px;
+    }
+    .section-testimonial-1 .testimonial-item p {
+        font-size: 12px;
+    }
+}

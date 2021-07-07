@@ -27,7 +27,9 @@ function Intro() {
                             </Link>
                         </button>
                         <button className="button button-lg button-light">
+                            <Link to="/contact">
                             <span className="text text-primary">Follow Me</span>
+                            </Link>
                         </button>
                     </div>
                 </Container>

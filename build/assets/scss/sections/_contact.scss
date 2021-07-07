@@ -1,0 +1,18 @@
+/*------------------------------------
+    Section: Contact
+------------------------------------*/
+
+.section-contact-1 {
+    .contact-image {
+        height: 100%;
+        position: relative;
+
+        .image {
+            top: 0;
+            left: 15px;
+            right: 15px;
+            height: 100%;
+            position: absolute;
+        }
+    }
+}

@@ -15,11 +15,19 @@ import About from "./About";
 import Intro from "./Intro";
 import Header from "./Header";
 import Resume from "./Resume";
-import Service from "./Service";
+import Endurance from "./Endurance";
+import Percussion from "./Percussion";
 import Contact from "./Contact";
 import Portfolio from "./Portfolio";
 import Testimonial from "./Testimonial";
 import BlogSinglePost from "./BlogSinglePost";
+
+
+//Posts
+
+import Leadville_Half from "./components/Posts_Endurance/Leadville_Half";
+
+
 // Components
 import Helmet from "./components/common/Helmet";
 import PageSwitch from "./components/common/PageSwitch";
@@ -41,8 +49,12 @@ const routes = [
         component: <Resume />,
     },
     {
-        path: "service",
-        component: <Service />,
+        path: "endurance",
+        component: <Endurance />
+    },
+    {
+        path: "percussion",
+        component: <Percussion />,
     },
     {
         path: "portfolio",
@@ -64,6 +76,15 @@ const routes = [
         path: "contact",
         component: <Contact />,
     },
+
+//Edurance Posts
+
+    {
+        path: "endurance/leadville_half",
+        component: <Leadville_Half />
+    }
+
+
 ];
 
 function Root() {

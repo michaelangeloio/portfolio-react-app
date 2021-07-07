@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-grid-system";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Carousel, { Modal, ModalGateway } from "react-images";
+import { Link } from "react-router-dom";
 
 // Components
 import Headline from "./components/common/Headline";
@@ -12,8 +13,8 @@ const portfolio = [
         items: [
             {
                 id: 0,
-                title: "Crearive Design",
-                link: "/portfolio-details",
+                title: "Test",
+                link: "/intro",
                 subtitle: "Web Design",
                 src: "/assets/images/portfolio/3-1.jpg",
                 thumbnail: "/assets/images/portfolio/3-1.jpg",
@@ -251,11 +252,13 @@ function Portfolio() {
                                                 <div className="portfolio-card">
                                                     <div className="image overlay-image" style={{ backgroundImage: `url(${item.src})` }} />
                                                     <div className="content">
+                                                        <Link to={item.link}>
                                                         <button className="button button-circle button-icon button-circle-md button-primary">
                                                             <span className="el-icon-icon ti-fullscreen"></span>
                                                         </button>
                                                         <span>{item.title}</span>
                                                         <h3>{item.subtitle}</h3>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             </div>
