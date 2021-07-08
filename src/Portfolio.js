@@ -5,7 +5,7 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 import { Link } from "react-router-dom";
 
 // Components
-import Headline from "./components/common/Headline";
+import Headline from "./components/common/headline";
 
 const portfolio = [
     {

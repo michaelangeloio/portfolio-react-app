@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-grid-system";
 // Components
-import ProgressBar from "./components/common/ProgressBar";
+import ProgressBar from "./components/common/progressbar";
 import {Link} from "react-router-dom";
 
 

@@ -10,29 +10,29 @@ import {Redirect, useRouteMatch } from "react-router-dom";
 import { Fragment } from 'react';
 
 // Sections
-import Blog from "./Blog";
-import About from "./About";
-import Intro from "./Intro";
-import Header from "./Header";
-import Resume from "./Resume";
-import Endurance from "./Endurance";
-import Percussion from "./Percussion";
-import Contact from "./Contact";
-import Portfolio from "./Portfolio";
-import Testimonial from "./Testimonial";
-import BlogSinglePost from "./BlogSinglePost";
+import Blog from "./blog";
+import About from "./about";
+import Intro from "./intro";
+import Header from "./header";
+import Resume from "./resume";
+import Endurance from "./endurance";
+import Percussion from "./percussion";
+import Contact from "./contact";
+import Portfolio from "./portfolio";
+import Testimonial from "./testimonial";
+import BlogSinglePost from "./blogsinglepost";
 
 
 //Posts
 
-import Leadville_Half from "./components/Posts_Endurance/Leadville_Half";
+import Leadville_Half from "./components/Posts_Endurance/leadville_half";
 
 
 // Components
-import Helmet from "./components/common/Helmet";
-import PageSwitch from "./components/common/PageSwitch";
-import RedirectAs404 from "./components/common/RedirectAs404";
-import Error404 from "./components/common/Error404";
+import Helmet from "./components/common/helmet";
+import PageSwitch from "./components/common/pageswitch";
+import RedirectAs404 from "./components/common/redirectas404";
+import Error404 from "./components/common/error404";
 
 
 import Amplify, { Auth } from 'aws-amplify';

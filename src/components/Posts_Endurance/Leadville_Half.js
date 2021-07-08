@@ -2,7 +2,7 @@ import React from "react";
 import { FaCheck } from "react-icons/fa";
 import { Container } from "react-grid-system";
 // Components
-import GoBack from "../../components/common/GoBack";
+import GoBack from "../common/goback";
 
 function Leadville_Half() {
     return (

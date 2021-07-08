@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { Container } from "react-grid-system";
 import { Link, useRouteMatch } from "react-router-dom";
 // Components
-import Headline from "./components/common/Headline";
+import Headline from "./components/common/headline";
 
 const posts = [
     {

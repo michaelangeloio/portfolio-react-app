@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { Container, Row, Col } from "react-grid-system";
 // Components
-import Headline from "./components/common/Headline";
+import Headline from "./components/common/headline";
 
 const testimonial1 = [
     {
