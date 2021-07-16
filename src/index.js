@@ -35,13 +35,13 @@ import RedirectAs404 from "./components/common/redirectas404";
 import Error404 from "./components/common/error404";
 
 
-import Amplify, { Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-import { Analytics } from 'aws-amplify';
+// import Amplify, { Auth } from 'aws-amplify';
+// import awsconfig from './aws-exports';
+// import { Analytics } from 'aws-amplify';
 
-Amplify.configure(awsconfig);
+// Amplify.configure(awsconfig);
 
-Analytics.record({ name: 'albumVisit' });
+// Analytics.record({ name: 'albumVisit' });
 
 const routes = [
     {
