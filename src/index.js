@@ -40,7 +40,7 @@ import Analytics from '@aws-amplify/analytics';
 import Auth from '@aws-amplify/auth';
 import awsconfig from './aws-exports';
 import { Logger } from 'aws-amplify';
-window.LOG_LEVEL = 'DEBUG';
+
 
 // Amplify.configure(awsconfig);
 // Analytics.record({ name: 'albumVisit' });
@@ -102,48 +102,58 @@ function Root() {
 
     useEffect(() => {
         // Analytics.record('Home Page Visit');
-
         Amplify.configure({
-            // To get the AWS Credentials, you need to configure 
-            // the Auth module with your Cognito Federated Identity Pool
-            Auth: {
-                identityPoolId: 'us-east-1:b733755d-5d66-43d2-9c27-5d6ee2e47e56',
-                region: 'us-east-1',
-                mandatorySignIn: false,
-
-            },
-            Analytics: {
-                // OPTIONAL - disable Analytics if true
-                disabled: false,
-                // OPTIONAL - Allow recording session events. Default is true.
-                autoSessionRecord: true,
-        
-                AWSPinpoint: {
-                    // OPTIONAL -  Amazon Pinpoint App Client ID
-                    appId: '490cb977451f4fc5828adab97f0d18f4',
-                    // OPTIONAL -  Amazon service region
-                    region: 'us-east-1',
-                    // OPTIONAL -  Customized endpoint
-                    // endpointId: 'XXXXXXXXXXXX',
-                    // OPTIONAL - Default Endpoint Information
-           
-                    },
-        
-                    // Buffer settings used for reporting analytics events.
-                    // OPTIONAL - The buffer size for events in number of items.
-                    bufferSize: 1000,
-        
-                    // OPTIONAL - The interval in milliseconds to perform a buffer check and flush if necessary.
-                    flushInterval: 5000, // 5s 
-        
-                    // OPTIONAL - The number of events to be deleted from the buffer when flushed.
-                    flushSize: 100,
-        
-                    // OPTIONAL - The limit for failed recording retries.
-                    resendLimit: 5
-                }
+            aws_cognito_region: "us-east-1", // (required) - Region where Amazon Cognito project was created   
+            // aws_user_pools_id:  "us-east-1_6AfQ6", // (optional) -  Amazon Cognito User Pool ID   
+            // aws_user_pools_web_client_id: "5t3le8878kgc72", // (optional) - Amazon Cognito App Client ID (App client secret needs to be disabled)
+            aws_cognito_identity_pool_id: "us-east-1:b733755d-5d66-43d2-9c27-5d6ee2e47e56", // (optional) - Amazon Cognito Identity Pool ID   
+            aws_mandatory_sign_in: "false", // (optional) - Users are not allowed to get the aws credentials unless they are signed in   
+                aws_mobile_analytics_app_region: "us-east-1", // (required) Amazon Pinpoint Project region
+                aws_mobile_analytics_app_id: "490cb977451f4fc5828adab97f0d18f4" // (required) Amazon Pinpoint Project ID
+         
+        })
+        // Amplify.configure({
             
-            });
+        //     // To get the AWS Credentials, you need to configure 
+        //     // the Auth module with your Cognito Federated Identity Pool
+        //     Auth: {
+        //         identityPoolId: 'us-east-1:b733755d-5d66-43d2-9c27-5d6ee2e47e56',
+        //         region: 'us-east-1',
+        //         mandatorySignIn: false,
+
+        //     },
+        //     Analytics: {
+        //         // OPTIONAL - disable Analytics if true
+        //         disabled: false,
+        //         // OPTIONAL - Allow recording session events. Default is true.
+        //         autoSessionRecord: true,
+        
+        //         AWSPinpoint: {
+        //             // OPTIONAL -  Amazon Pinpoint App Client ID
+        //             appId: '490cb977451f4fc5828adab97f0d18f4',
+        //             // OPTIONAL -  Amazon service region
+        //             region: 'us-east-1',
+        //             // OPTIONAL -  Customized endpoint
+        //             // endpointId: 'XXXXXXXXXXXX',
+        //             // OPTIONAL - Default Endpoint Information
+           
+        //             },
+        
+        //             // Buffer settings used for reporting analytics events.
+        //             // OPTIONAL - The buffer size for events in number of items.
+        //             bufferSize: 1000,
+        
+        //             // OPTIONAL - The interval in milliseconds to perform a buffer check and flush if necessary.
+        //             flushInterval: 5000, // 5s 
+        
+        //             // OPTIONAL - The number of events to be deleted from the buffer when flushed.
+        //             flushSize: 100,
+        
+        //             // OPTIONAL - The limit for failed recording retries.
+        //             resendLimit: 5
+        //         }
+            
+        //     });
             Analytics.autoTrack('event', {
                 // REQUIRED, turn on/off the auto tracking
                 enable: true,
