@@ -112,6 +112,7 @@ function Root() {
                 aws_mobile_analytics_app_id: "490cb977451f4fc5828adab97f0d18f4" // (required) Amazon Pinpoint Project ID
          
         })
+        window.LOG_LEVEL = 'DEBUG';
         // Amplify.configure({
             
         //     // To get the AWS Credentials, you need to configure 
