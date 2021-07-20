@@ -35,11 +35,6 @@ import RedirectAs404 from "./components/common/redirectas404";
 import Error404 from "./components/common/error404";
 
 
-import Amplify, { Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-import { Analytics } from 'aws-amplify';
-
-Amplify.configure(awsconfig);
 
 // Analytics.record({ name: 'albumVisit' });
 
@@ -99,10 +94,14 @@ function Root() {
     let { path } = useRouteMatch();
 
     useEffect(() => {
+        // Analytics.record('Home Page Visit');
+
+
         document.documentElement.className = "home-3 skin-3";
         return () => {
             document.documentElement.className = "";
         };
+        
     });
 
     return (

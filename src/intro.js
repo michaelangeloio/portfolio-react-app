@@ -3,7 +3,6 @@ import TextLoop from "react-text-loop";
 import { Container } from "react-grid-system";
 import { Link } from "react-router-dom";
 
-import { Analytics } from 'aws-amplify';
 
 // Analytics.autoTrack('event', {
 //     // REQUIRED, turn on/off the auto tracking
