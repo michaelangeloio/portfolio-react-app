@@ -1,0 +1,21 @@
+{
+    "appName": "MARamplify",
+    "roleName": "pinpointLambdaRolee9cfb3ae",
+    "cloudformationPolicyName": "cloudformationPolicye9cfb3ae",
+    "cloudWatchPolicyName": "cloudWatchPolicye9cfb3ae",
+    "pinpointPolicyName": "pinpointPolicye9cfb3ae",
+    "authPolicyName": "pinpoint_amplify_e9cfb3ae",
+    "unauthPolicyName": "pinpoint_amplify_e9cfb3ae",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

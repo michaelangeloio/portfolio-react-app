@@ -35,11 +35,14 @@ import RedirectAs404 from "./components/common/redirectas404";
 import Error404 from "./components/common/error404";
 
 
-// import Amplify from '@aws-amplify/core';
-// import Analytics from '@aws-amplify/analytics';
-// import Auth from '@aws-amplify/auth';
-// import awsconfig from './aws-exports';
+import Amplify from '@aws-amplify/core';
+import Analytics from '@aws-amplify/analytics';
+import Auth from '@aws-amplify/auth';
+import awsconfig from './aws-exports';
+import { Logger } from 'aws-amplify';
+window.LOG_LEVEL = 'DEBUG';
 
+// Amplify.configure(awsconfig);
 // Analytics.record({ name: 'albumVisit' });
 
 const routes = [
@@ -100,9 +103,73 @@ function Root() {
     useEffect(() => {
         // Analytics.record('Home Page Visit');
 
-        // Amplify.configure(awsconfig);
+        Amplify.configure({
+            // To get the AWS Credentials, you need to configure 
+            // the Auth module with your Cognito Federated Identity Pool
+            Auth: {
+                identityPoolId: 'us-east-1:b733755d-5d66-43d2-9c27-5d6ee2e47e56',
+                region: 'us-east-1'
+            },
+            Analytics: {
+                // OPTIONAL - disable Analytics if true
+                disabled: false,
+                // OPTIONAL - Allow recording session events. Default is true.
+                autoSessionRecord: true,
+        
+                AWSPinpoint: {
+                    // OPTIONAL -  Amazon Pinpoint App Client ID
+                    appId: '490cb977451f4fc5828adab97f0d18f4',
+                    // OPTIONAL -  Amazon service region
+                    region: 'us-east-1',
+                    // OPTIONAL -  Customized endpoint
+                    // endpointId: 'XXXXXXXXXXXX',
+                    // OPTIONAL - Default Endpoint Information
+           
+                    },
+        
+                    // Buffer settings used for reporting analytics events.
+                    // OPTIONAL - The buffer size for events in number of items.
+                    bufferSize: 1000,
+        
+                    // OPTIONAL - The interval in milliseconds to perform a buffer check and flush if necessary.
+                    flushInterval: 5000, // 5s 
+        
+                    // OPTIONAL - The number of events to be deleted from the buffer when flushed.
+                    flushSize: 100,
+        
+                    // OPTIONAL - The limit for failed recording retries.
+                    resendLimit: 5
+                }
+            
+            });
+            Analytics.autoTrack('event', {
+                // REQUIRED, turn on/off the auto tracking
+                enable: true,
+                // OPTIONAL, events you want to track, by default is 'click'
+                events: ['click'],
+                // OPTIONAL, the prefix of the selectors, by default is 'data-amplify-analytics-'
+                // in order to avoid collision with the user agent, according to https://www.w3schools.com/tags/att_global_data.asp
+                // always put 'data' as the first prefix
+                selectorPrefix: 'data-amplify-analytics-',
+                // OPTIONAL, the service provider, by default is the Amazon Pinpoint
+                provider: 'AWSPinpoint',
+                // OPTIONAL, the default attributes of the event, you can either pass an object or a function 
+                // which allows you to define dynamic attributes
+                attributes: {
+                    attr: 'attr'
+                }
+                // when using function
+                // attributes: () => {
+                //    const attr = somewhere();
+                //    return {
+                //        myAttr: attr
+                //    }
+                // }
+            });    
+        
+
         // Auth.configure({ mandatorySignIn: false});
-        // Analytics.record({ name: 'bootup' });
+        Analytics.record({ name: 'Front Page' });
 
         document.documentElement.className = "home-3 skin-3";
         return () => {

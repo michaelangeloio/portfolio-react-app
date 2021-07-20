@@ -1,0 +1,19 @@
+{
+    "identityPoolName": "marwebapp_identitypool_e67c98d7",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "cognitoe67c98d7",
+    "sharedId": "e67c98d7",
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    }
+}

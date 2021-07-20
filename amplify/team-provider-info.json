@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-marwebapp-dev-152921-authRole",
+      "UnauthRoleArn": "arn:aws:iam::190853022006:role/amplify-marwebapp-dev-152921-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::190853022006:role/amplify-marwebapp-dev-152921-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-marwebapp-dev-152921-deployment",
+      "UnauthRoleName": "amplify-marwebapp-dev-152921-unauthRole",
+      "StackName": "amplify-marwebapp-dev-152921",
+      "StackId": "arn:aws:cloudformation:us-east-1:190853022006:stack/amplify-marwebapp-dev-152921/c9c51170-e990-11eb-bf85-12cf4a8c2bc2",
+      "AmplifyAppId": "d2movxu57aqnbw"
+    },
+    "categories": {
+      "auth": {
+        "cognitoe67c98d7": {}
+      }
+    }
+  }
+}

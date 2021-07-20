@@ -48,9 +48,9 @@ function Intro() {
                             </TextLoop>
                         </h1>
                         <button className="button button-lg button-primary"
-                            // data-amplify-analytics-on='click'
-                            // data-amplify-analytics-name='click'
-                            // data-amplify-analytics-attrs='attr1:attr1_value,attr2:attr2_value'
+                            data-amplify-analytics-on='click'
+                            data-amplify-analytics-name='see_more_button'
+                            data-amplify-analytics-attrs='attr1:attr1_value,attr2:attr2_value'
                         >
                             <span className="wave"></span>
                             <Link to="/about">

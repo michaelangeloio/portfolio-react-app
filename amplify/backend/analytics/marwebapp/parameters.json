@@ -1,0 +1,21 @@
+{
+    "appName": "marwebapp",
+    "roleName": "pinpointLambdaRole3b9b9688",
+    "cloudformationPolicyName": "cloudformationPolicy3b9b9688",
+    "cloudWatchPolicyName": "cloudWatchPolicy3b9b9688",
+    "pinpointPolicyName": "pinpointPolicy3b9b9688",
+    "authPolicyName": "pinpoint_amplify_3b9b9688",
+    "unauthPolicyName": "pinpoint_amplify_3b9b9688",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

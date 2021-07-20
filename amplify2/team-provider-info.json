@@ -1,0 +1,56 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mar-dev-133927-authRole",
+      "UnauthRoleArn": "arn:aws:iam::190853022006:role/amplify-mar-dev-133927-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::190853022006:role/amplify-mar-dev-133927-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mar-dev-133927-deployment",
+      "UnauthRoleName": "amplify-mar-dev-133927-unauthRole",
+      "StackName": "amplify-mar-dev-133927",
+      "StackId": "arn:aws:cloudformation:us-east-1:190853022006:stack/amplify-mar-dev-133927/6f2a7ac0-e981-11eb-baef-12ee9e7cea81",
+      "AmplifyAppId": "dxv1i3ko80bry"
+    },
+    "categories": {
+      "auth": {
+        "cognito00c64635": {}
+      }
+    }
+  },
+  "mar": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mar-mar-135816-authRole",
+      "UnauthRoleArn": "arn:aws:iam::190853022006:role/amplify-mar-mar-135816-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::190853022006:role/amplify-mar-mar-135816-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mar-mar-135816-deployment",
+      "UnauthRoleName": "amplify-mar-mar-135816-unauthRole",
+      "StackName": "amplify-mar-mar-135816",
+      "StackId": "arn:aws:cloudformation:us-east-1:190853022006:stack/amplify-mar-mar-135816/0fee4340-e984-11eb-9879-0e762363e33d",
+      "AmplifyAppId": "dxv1i3ko80bry"
+    },
+    "categories": {
+      "auth": {
+        "cognito00c64635": {}
+      }
+    }
+  },
+  "mardev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mar-mardev-143118-authRole",
+      "UnauthRoleArn": "arn:aws:iam::190853022006:role/amplify-mar-mardev-143118-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::190853022006:role/amplify-mar-mardev-143118-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-mar-mardev-143118-deployment",
+      "UnauthRoleName": "amplify-mar-mardev-143118-unauthRole",
+      "StackName": "amplify-mar-mardev-143118",
+      "StackId": "arn:aws:cloudformation:us-east-1:190853022006:stack/amplify-mar-mardev-143118/acbe9f90-e988-11eb-87b5-12761858613b",
+      "AmplifyAppId": "dxv1i3ko80bry"
+    },
+    "categories": {
+      "auth": {
+        "cognito00c64635": {}
+      }
+    }
+  }
+}
