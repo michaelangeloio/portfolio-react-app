@@ -38,6 +38,7 @@ import Error404 from "./components/common/error404";
 import Amplify from '@aws-amplify/core';
 import Analytics from '@aws-amplify/analytics';
 import Auth from '@aws-amplify/auth';
+
 import awsconfig from './aws-exports';
 import { Logger } from 'aws-amplify';
 
@@ -112,6 +113,18 @@ function Root() {
                 aws_mobile_analytics_app_id: "490cb977451f4fc5828adab97f0d18f4" // (required) Amazon Pinpoint Project ID
          
         })
+        Amplify.configure({
+            Auth: {
+              // (required) only for Federated Authentication - Amazon Cognito Identity Pool ID
+              identityPoolId: 'us-east-1:b733755d-5d66-43d2-9c27-5d6ee2e47e56',
+          
+              // (required)- Amazon Cognito Region
+              region: 'us-east-1',
+              // (optional) - Enforce user authentication prior to accessing AWS resources or not
+              mandatorySignIn: false ,
+              secure: true
+            }
+             })
         window.LOG_LEVEL = 'DEBUG';
         // Amplify.configure({
             

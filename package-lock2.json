@@ -1403,7 +1403,8 @@
       },
       "dependencies": {
         "case": {
-          "version": "1.6.3"
+          "version": "1.6.3",
+          "bundled": true
         }
       }
     },
@@ -1483,20 +1484,24 @@
       },
       "dependencies": {
         "balanced-match": {
-          "version": "1.0.0"
+          "version": "1.0.0",
+          "bundled": true
         },
         "brace-expansion": {
           "version": "1.1.11",
+          "bundled": true,
           "requires": {
             "balanced-match": "^1.0.0",
             "concat-map": "0.0.1"
           }
         },
         "concat-map": {
-          "version": "0.0.1"
+          "version": "0.0.1",
+          "bundled": true
         },
         "minimatch": {
           "version": "3.0.4",
+          "bundled": true,
           "requires": {
             "brace-expansion": "^1.1.7"
           }
@@ -1888,10 +1893,12 @@
       },
       "dependencies": {
         "jsonschema": {
-          "version": "1.4.0"
+          "version": "1.4.0",
+          "bundled": true
         },
         "semver": {
-          "version": "7.3.2"
+          "version": "7.3.2",
+          "bundled": true
         }
       }
     },
@@ -1909,23 +1916,28 @@
       },
       "dependencies": {
         "at-least-node": {
-          "version": "1.0.0"
+          "version": "1.0.0",
+          "bundled": true
         },
         "balanced-match": {
-          "version": "1.0.0"
+          "version": "1.0.0",
+          "bundled": true
         },
         "brace-expansion": {
           "version": "1.1.11",
+          "bundled": true,
           "requires": {
             "balanced-match": "^1.0.0",
             "concat-map": "0.0.1"
           }
         },
         "concat-map": {
-          "version": "0.0.1"
+          "version": "0.0.1",
+          "bundled": true
         },
         "fs-extra": {
           "version": "9.0.1",
+          "bundled": true,
           "requires": {
             "at-least-node": "^1.0.0",
             "graceful-fs": "^4.2.0",
@@ -1934,10 +1946,12 @@
           }
         },
         "graceful-fs": {
-          "version": "4.2.4"
+          "version": "4.2.4",
+          "bundled": true
         },
         "jsonfile": {
           "version": "6.0.1",
+          "bundled": true,
           "requires": {
             "graceful-fs": "^4.1.6",
             "universalify": "^1.0.0"
@@ -1945,12 +1959,14 @@
         },
         "minimatch": {
           "version": "3.0.4",
+          "bundled": true,
           "requires": {
             "brace-expansion": "^1.1.7"
           }
         },
         "universalify": {
-          "version": "1.0.0"
+          "version": "1.0.0",
+          "bundled": true
         }
       }
     },
@@ -1978,7 +1994,8 @@
       },
       "dependencies": {
         "semver": {
-          "version": "7.3.2"
+          "version": "7.3.2",
+          "bundled": true
         }
       }
     },
