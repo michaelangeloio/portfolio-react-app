@@ -35,7 +35,7 @@ import RedirectAs404 from "./components/common/redirectas404";
 import Error404 from "./components/common/error404";
 
 
-import Amplify from '@aws-amplify/core';
+import Amplify from 'aws-amplify';
 import Analytics from '@aws-amplify/analytics';
 import Auth from '@aws-amplify/auth';
 
