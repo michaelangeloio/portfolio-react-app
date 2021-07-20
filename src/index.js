@@ -108,7 +108,9 @@ function Root() {
             // the Auth module with your Cognito Federated Identity Pool
             Auth: {
                 identityPoolId: 'us-east-1:b733755d-5d66-43d2-9c27-5d6ee2e47e56',
-                region: 'us-east-1'
+                region: 'us-east-1',
+                mandatorySignIn: false,
+
             },
             Analytics: {
                 // OPTIONAL - disable Analytics if true
