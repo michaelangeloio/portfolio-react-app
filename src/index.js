@@ -35,6 +35,10 @@ import RedirectAs404 from "./components/common/redirectas404";
 import Error404 from "./components/common/error404";
 
 
+// import Amplify from '@aws-amplify/core';
+// import Analytics from '@aws-amplify/analytics';
+// import Auth from '@aws-amplify/auth';
+// import awsconfig from './aws-exports';
 
 // Analytics.record({ name: 'albumVisit' });
 
@@ -96,6 +100,9 @@ function Root() {
     useEffect(() => {
         // Analytics.record('Home Page Visit');
 
+        // Amplify.configure(awsconfig);
+        // Auth.configure({ mandatorySignIn: false});
+        // Analytics.record({ name: 'bootup' });
 
         document.documentElement.className = "home-3 skin-3";
         return () => {

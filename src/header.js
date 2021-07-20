@@ -56,7 +56,7 @@ function Header() {
 
     
     return (
-        <>
+        <div>
             <header className="app-header app-header-1">
                 <div className="header-logo" style={{ img: '#5cab86' }} >
                 <NavLink to="/">
@@ -147,7 +147,7 @@ function Header() {
                 <span className="sidenav-close" />
             </div>
             {/* <DemoOptions /> */}
-        </>
+        </div>
     );
 }
 
