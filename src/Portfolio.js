@@ -3,6 +3,9 @@ import { Container, Row, Col } from "react-grid-system";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { Link } from "react-router-dom";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 
 // Components
 import Headline from "./components/common/headline";
@@ -224,6 +227,15 @@ const images = [
 ];
 
 function Portfolio() {
+    return (
+      <div>
+        <PortfolioHidden />
+      </div>
+    );
+  }
+  
+
+function PortfolioHidden() {
     const [lightboxIsOpen, setLightboxIsOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -232,11 +244,33 @@ function Portfolio() {
         setLightboxIsOpen(!lightboxIsOpen);
     };
 
+    const [dp, setDp] = useState(false);
+
+
     return (
+        
         <section className="section section-portfolio section-portfolio-1">
             <div className="display-spacing">
                 <Container className="container">
                     <Headline label="Portfolio" title="Let's See My Work" divider_1={true} position="center" />
+                    <div className="div-center text-center">  
+
+                    <Popup
+                        trigger={<button className="button button-md button-primary"> Open Modal </button>}
+                        modal
+                        nested
+                    >
+                    <button className="button button-md button-primary"
+                        onClick={e => {
+                        e.preventDefault();
+                        setDp(!dp);
+                        }}
+                    >
+                        Test
+                    </button>
+                    </Popup>
+                </div>
+                {dp &&
                     <Tabs className="el-tabs el-tabs-1" selectedTabClassName="active">
                         <TabList className="el-tabs-links">
                             {portfolio.map((category, categoryIndex) => (
@@ -267,7 +301,8 @@ function Portfolio() {
                                 </Row>
                             </TabPanel>
                         ))}
-                    </Tabs>
+                    </Tabs>     
+            }
                 </Container>
                 <ModalGateway>
                     {lightboxIsOpen ? (
@@ -278,6 +313,7 @@ function Portfolio() {
                 </ModalGateway>
             </div>
         </section>
+     
     );
 }
 

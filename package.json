@@ -23,6 +23,7 @@
     "react-tabs": "^3.2.2",
     "react-text-loop": "^2.3.0",
     "react-transition-group": "^4.4.2",
+    "reactjs-popup": "^2.0.5",
     "slick-carousel": "^1.8.1",
     "themify-icons-sass": "^1.0.1"
   },
