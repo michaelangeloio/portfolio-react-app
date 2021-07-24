@@ -11,6 +11,7 @@
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-google-map-picker": "^1.2.3",
     "react-grid-system": "^6.3.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
