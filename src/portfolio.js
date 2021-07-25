@@ -9,6 +9,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import MapPicker from 'react-google-map-picker'
 import Typewriter from 'typewriter-effect';
+import { Wave } from 'react-animated-text';
 
 
 
@@ -231,8 +232,6 @@ const images = [
     },
 ];
 
-const DefaultLocation = { lat: 40.752336836965696, lng: -73.98232417652586};
-const DefaultZoom = 10;
 
 
 function Portfolio() {
@@ -253,25 +252,10 @@ function PortfolioHidden() {
         setLightboxIsOpen(!lightboxIsOpen);
     };
 
-    const [dp, setDp] = useState(false);
-    const [dp2, setDp2] = useState(false);
-    const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
+    const [dp, setDp] = useState(true);
 
-    const [location, setLocation] = useState(defaultLocation);
-    const [zoom, setZoom] = useState(DefaultZoom);
+
   
-    function handleChangeLocation (lat, lng){
-      setLocation({lat:lat, lng:lng});
-    }
-    
-    function handleChangeZoom (newZoom){
-      setZoom(newZoom);
-    }
-  
-    function handleResetLocation(){
-      setDefaultLocation({ ...DefaultLocation});
-      setZoom(DefaultZoom);
-    }
 
     return (
         
@@ -280,90 +264,10 @@ function PortfolioHidden() {
                 <Container className="container">
                     <Headline label="Portfolio" title="Let's See My Work" divider_1={true} position="center" />
                     <div className="div-center text-center">  
-
-                    <Popup
-                        trigger={<button className="button button-md button-primary"> Open Modal </button>}
-                        modal
-                        nested
-                    >
-                         <div className="div-center text-center">  
-                            <div className="modal">   <div className="modal header"> Let me ask you a few questions </div>
-                        <button className="button button-md button-primary"
-                            onClick={e => {
-                            e.preventDefault();
-                            setDp(!dp);} 
-                                }>
-                        </button>
-                             </div>
-                        <button onClick={handleResetLocation}>Reset Location</button>
-                        <label>Latitute:</label><input type='text' value={location.lat} disabled/>
-                        <label>Longitute:</label><input type='text' value={location.lng} disabled/>
-                        <label>Zoom:</label><input type='text' value={zoom} disabled/>
-                        
-                        <MapPicker defaultLocation={defaultLocation}
-                            zoom={zoom}
-                            mapTypeId="roadmap"
-                            style={{height:'700px'}}
-                            onChangeLocation={handleChangeLocation} 
-                            onChangeZoom={handleChangeZoom}
-                            apiKey='AIzaSyAXj48YMuiEqGhKLY88NonO4YhFVKGcbjY'/>
-                          </div>
-                    </Popup>
-                </div>
-                                <Popup
-                    trigger={<button className="button button-md button-primary"> Open Modal </button>}
-                    modal
-                    nested
-                >
-                    {close => (
-                    <div className="modal">
-                        <button className="close" onClick={close}>
-                        &times;
-                        </button>
-                        <div className="header"> Hello There!</div>
-                        <div className="content div-center text-center">
-                        {' '}
+                
+            </div>
 
 
-                        <Typewriter
-                        options={{
-                            strings: ['I need to ask you a few questions before you get to see the goods!', 'Dont fret! Your responses will remain completely anonymous.'],
-                            autoStart: true,
-                            loop: false,
-                            pauseFor: 3000,
-                            delay: 25,
-                            deleteSpeed: 22
-                        }}
-                        />
-
-                    
-                        </div>
-                        <div className="actions">
-                        <Popup
-                            trigger={<button className="button"> Trigger </button>}
-                            position="top center"
-                            nested
-                        >
-                            <span>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-                            magni omnis delectus nemo, maxime molestiae dolorem numquam
-                            mollitia, voluptate ea, accusamus excepturi deleniti ratione
-                            sapiente! Laudantium, aperiam doloribus. Odit, aut.
-                            </span>
-                        </Popup>
-                        <button
-                            className="button"
-                            onClick={() => {
-                            console.log('modal closed ');
-                            close();
-                            }}
-                        >
-                            close modal
-                        </button>
-                        </div>
-                    </div>
-                    )}
-                </Popup>
                 {dp &&
                     <Tabs className="el-tabs el-tabs-1" selectedTabClassName="active">
                         <TabList className="el-tabs-links">
