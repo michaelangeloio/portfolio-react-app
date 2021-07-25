@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-grid-system";
-
 import { useHistory } from "react-router-dom";
+
 
 // Auxillary Packages
 import Popup from 'reactjs-popup';
@@ -9,6 +9,7 @@ import 'reactjs-popup/dist/index.css';
 import MapPicker from 'react-google-map-picker'
 import Typewriter from 'typewriter-effect';
 import { Wave } from 'react-animated-text';
+import Redirect from "react";
 
 
 
@@ -31,6 +32,21 @@ function Landing() {
   
 
 function LandingHidden() {
+
+    useEffect(() => {
+        // checking if localStorage has a "hasVisited" key
+        if (localStorage.getItem("hasVisited")){
+            // setting the state of welcomeMessage to "Welcome back!" if it does
+        } else {
+            // creating the "hasVisited" key value pair in localStorage if it doesnt exist
+          localStorage.setItem("hasVisited", "true")
+          localStorage.setItem("pageDirect", "/about")
+        }
+        // we are only running this useEffect on the first render of app because we passed an
+        // empty array
+      },[])
+    
+
     const history = useHistory();
 
     const routeChange = () =>{ 

@@ -106,9 +106,13 @@ const routes = [
 ];
 
 
-function Root() {
-    let { path } = useRouteMatch();
 
+function Root() {
+
+
+    
+    let { path } = useRouteMatch();
+    
     
 
     useEffect(() => {

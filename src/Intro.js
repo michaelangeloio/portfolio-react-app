@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import TextLoop from "react-text-loop";
 import { Container } from "react-grid-system";
 import { Link } from "react-router-dom";
@@ -30,27 +30,22 @@ import { Link } from "react-router-dom";
 // });
 
 
-const useStateWithLocalStorage = localStorageKey => {
-    const [value, setValue] = React.useState(
-      localStorage.getItem(localStorageKey) || ''
-    );
-   
-    React.useEffect(() => {
-      localStorage.setItem(localStorageKey, value);
-    }, [value]);
-   
-    return [value, setValue];
-  };
-
 function Intro() {
 
-    const [value, setValue] = useStateWithLocalStorage(
-        'firstVisit'
-      );
-     
-    const onChange = event => setValue(event.target.value);
-    
 
+
+    
+    function firstVisitHandler() {
+        if (localStorage.getItem("hasVisited")) {
+            return("/about")
+        }
+        else {
+            return("/landing")
+        }
+    }
+
+
+ 
     return (
         <section className="section section-hero section-hero-3 overlay-image" style={{ backgroundImage: `url(https://michaelangrivera-media.s3.us-east-2.amazonaws.com/main_photo.jpg)` }}>
             <div className="display-center">
@@ -73,7 +68,7 @@ function Intro() {
                             data-amplify-analytics-attrs='attr1:attr1_value,attr2:attr2_value'
                         >
                             <span className="wave"></span>
-                            <Link to="/about" onClick ={onChange}>
+                            <Link to={firstVisitHandler}>
                             <span className="text">See More</span>
                             </Link>
                         </button>
