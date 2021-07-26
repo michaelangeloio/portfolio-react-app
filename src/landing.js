@@ -50,7 +50,7 @@ function LandingHidden() {
     const history = useHistory();
 
     const routeChange = () =>{ 
-      let path = `/portfolio`; 
+      let path = `/landing/question2`; 
       history.push(path);
     }
     const [lightboxIsOpen, setLightboxIsOpen] = useState(false);
@@ -204,9 +204,10 @@ function LandingHidden() {
                         </form>
                      
                         <div>
-                        <button  onClick = {routeChange} className = 'button button-md button-primary'>Next</button>
-                                <div  className = 'div-center text-center' >
-                                <button onClick={handleResetLocation} style= {{marginTop: '30'}}>
+                        <button  onClick = {routeChange} className = 'button button-md button-primary'><h4>Next</h4></button>
+                                <div  className = 'div-center text-center'>
+                                <button onClick={handleResetLocation} >
+                                <br/>
                                 <p>Reset Location</p>
                                 </button>
                                 </div>

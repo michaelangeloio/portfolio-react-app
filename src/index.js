@@ -25,17 +25,23 @@ import BlogSinglePost from "./blogsinglepost";
 import Landing from "./landing";
 
 
+//landing
+import Question2 from  "./components/landing/question2";
+
+
 //Posts
 
-import Leadville_Half from "./components/Posts_Endurance/leadville_half";
+import LeadvilleHalf from "./components/Posts_Endurance/leadville_half";
 
 
-// Components
+// Common Components
 import Helmet from "./components/common/helmet";
 import PageSwitch from "./components/common/pageswitch";
 import RedirectAs404 from "./components/common/redirectas404";
 import Error404 from "./components/common/error404";
 
+
+//AWS
 
 import Amplify from 'aws-amplify';
 import Analytics from '@aws-amplify/analytics';
@@ -43,11 +49,13 @@ import Auth from '@aws-amplify/auth';
 
 import awsconfig from './aws-exports';
 import { Logger } from 'aws-amplify';
+
+
+//Auxillary Packages
 import CookieConsent from "react-cookie-consent";
 
 
-// Amplify.configure(awsconfig);
-// Analytics.record({ name: 'albumVisit' });
+
 
 const routes = [
     {
@@ -95,11 +103,17 @@ const routes = [
         component: <Contact />,
     },
 
+//Landing Pages
+    {
+        path: "landing/question2",
+        component: <Question2 />
+    },
+
 //Edurance Posts
 
     {
         path: "endurance/leadville_half",
-        component: <Leadville_Half />
+        component: <LeadvilleHalf />
     }
 
 

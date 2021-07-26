@@ -4,7 +4,7 @@ import { Container } from "react-grid-system";
 // Components
 import GoBack from "../common/goback";
 
-function Leadville_Half() {
+function LeadvilleHalf() {
     return (
         <section className="section section-single-post section-single-post-1">
             <div className="display-spacing">
@@ -74,4 +74,4 @@ function Leadville_Half() {
     );
 }
 
-export default Leadville_Half;
+export default LeadvilleHalf;
