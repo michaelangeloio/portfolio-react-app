@@ -149,7 +149,7 @@ function LandingHidden() {
                             </button>
 
                             <div className="content div-center text-center">
-                            <button><p style={{ marginTop: 30, textDecorationLine: 'underline'}}
+                            <button><span style={{ marginTop: 30, textDecorationLine: 'underline'}}
                                 onClick={() => {
                                 console.log('modal closed, game not played');
                                 close();
@@ -158,7 +158,7 @@ function LandingHidden() {
                                 }}
                             >  
                                 Skip (lame)
-                               </p></button> 
+                               </span></button> 
                                </div>
                             </div> 
                         }
@@ -204,7 +204,16 @@ function LandingHidden() {
                         </form>
                      
                         <div>
-                        <button  onClick = {routeChange} className = 'button button-md button-primary'><h4>Next</h4></button>
+                        <button  
+                            onClick = {routeChange} 
+                            className = 'button button-md button-primary'
+                           
+                            data-amplify-analytics-on='click'
+                            data-amplify-analytics-name='loc'
+                            data-amplify-analytics-attrs={ 'lat:' + location.lat + ", lng:" + location.lng}>
+                              
+                            <h4>Next</h4>
+                        </button>
                                 <div  className = 'div-center text-center'>
                                 <button onClick={handleResetLocation} >
                                 <br/>

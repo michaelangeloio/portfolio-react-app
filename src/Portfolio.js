@@ -259,6 +259,8 @@ function PortfolioHidden() {
 
     return (
         
+
+        
         <section className="section section-portfolio section-portfolio-1">
             <div className="display-spacing">
                 <Container className="container">
@@ -266,7 +268,7 @@ function PortfolioHidden() {
                     <div className="div-center text-center">  
                 
             </div>
-
+            <iframe title="test" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMzJiMWVkMWYtYmI3MS00YmUwLTg5YzYtNzQ2N2RkODY4NDU1IiwidCI6ImMxNWI1NjUwLTBmMzAtNDAxZC05YTMxLTVjN2MxNjc0MDM2ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
 
                 {dp &&
                     <Tabs className="el-tabs el-tabs-1" selectedTabClassName="active">

@@ -18,9 +18,11 @@ import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import { FormControl, FormGroup , FormControlLabel, Checkbox} from "@material-ui/core";
 import Divider from '@material-ui/core/Divider';
+import ButtonGroup from '@material-ui/core/ButtonGroup'
 
 //Icon Components
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -77,6 +79,9 @@ const useStyles = makeStyles((theme) => ({
   },
   resetContainer: {
     padding: theme.spacing(3),
+  },
+  step_label_root: {
+      fontSize: ""
   }
  
 }));
@@ -149,8 +154,8 @@ const useStyles2 = makeStyles((theme) => ({
             switch (step) {
               case 0:
                 return (
-
-                //Bottom Nav
+                      //Bottom Nav
+                <div>
                   <BottomNavigation
                   value={whoValue}
                   onChange={(event, newValue) => {
@@ -159,13 +164,13 @@ const useStyles2 = makeStyles((theme) => ({
                   showLabels
                   className={classes.root}
                 >
-                  <BottomNavigationAction label="Visitor"  fontSize="large" icon={<EmojiPeople fontSize="large" />} />
-                  <BottomNavigationAction label="Friend" fontSize="large" icon={<FavoriteIcon fontSize="large" />} />
+                  <BottomNavigationAction label="Visitor" icon={<EmojiPeople />} />
+                  <BottomNavigationAction label="Friend"  icon={<FavoriteIcon/>} />
        
-                </BottomNavigation>
+                </BottomNavigation></div>
                 );
               case 1:
-                return (                  <BottomNavigation
+                return (                  <div><BottomNavigation
                     value={foodValue}
                     onChange={(event, newValue) => {
                       setFoodValue(newValue);
@@ -173,13 +178,13 @@ const useStyles2 = makeStyles((theme) => ({
                     showLabels
                     className={classes.root}
                   >
-                    <BottomNavigationAction label="Pizza"  fontSize="large" icon={<LocalPizza fontSize="large" />} />
-                    <BottomNavigationAction label="Burger" fontSize="large" icon={<Fastfood fontSize="large" />} />
-                    <BottomNavigationAction label="Tea" fontSize="large" icon={<EmojiFoodBeverage fontSize="large" />} />
-                    <BottomNavigationAction label= "Home Cookin'" fontSize="large" icon={<Kitchen fontSize = "large"/>} />
+                    <BottomNavigationAction label="Pizza"  icon={<LocalPizza  />} />
+                    <BottomNavigationAction label="Burger"  icon={<Fastfood  />} />
+                    <BottomNavigationAction label="Tea"  icon={<EmojiFoodBeverage />} />
+                    <BottomNavigationAction label= "Home Cookin'" icon={<Kitchen />} />
 
          
-                  </BottomNavigation>);
+                  </BottomNavigation></div>);
               case 2:
                 return ( 
                  
@@ -238,9 +243,9 @@ const useStyles2 = makeStyles((theme) => ({
                     <Stepper  activeStep={activeStep} orientation="vertical">
                         {steps.map((label, index) => (
                         <Step key={label}>
-                            <StepLabel ><Typography fontSize= "h1">{label}</Typography></StepLabel>
+                            <StepLabel><Typography component="span" fontSize = "large">{label}</Typography></StepLabel>
                             <StepContent >
-                            <Typography >{getStepContent(index)}</Typography>
+                            <Typography  component="span" >{getStepContent(index)}</Typography>
                             <div className={classes.actionsContainer}>
                                 <div>
                                 <Button
@@ -250,6 +255,8 @@ const useStyles2 = makeStyles((theme) => ({
                                 >
                                     Back
                                 </Button>
+                                </div>
+                                <div>
                                 <Button
                                     variant="contained"
                                     color="primary"
