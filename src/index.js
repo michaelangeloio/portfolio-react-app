@@ -160,7 +160,7 @@ function Root() {
         
             Analytics.autoTrack('event', {
                 // REQUIRED, turn on/off the auto tracking
-                enable: true,
+                enable: false,
                 // OPTIONAL, events you want to track, by default is 'click'
                 events: ['click'],
                 // OPTIONAL, the prefix of the selectors, by default is 'data-amplify-analytics-'
@@ -185,7 +185,7 @@ function Root() {
         
 
         // Auth.configure({ mandatorySignIn: false});
-        Analytics.record({ name: 'Front Page' });
+        // Analytics.record({ name: 'Front Page' });
 
         document.documentElement.className = "home-3 skin-3";
         return () => {
