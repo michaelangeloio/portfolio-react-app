@@ -199,7 +199,13 @@ function Root() {
             <Helmet title="Michael Angelo Rivera" />
             
             <Header />
-            <CookieConsent> This website uses cookies to enhance the user experience.</CookieConsent>
+  
+            <CookieConsent
+                      onAccept={() => {
+                        alert("User accepted cookie agreement");
+                        Analytics.record({ name: 'Cookie Accept' });
+                      }}>
+                           This website uses cookies to enhance the user experience.</CookieConsent>
             <PageSwitch>
          
                 <Route path={path} exact>

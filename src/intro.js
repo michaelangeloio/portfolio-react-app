@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import TextLoop from "react-text-loop";
 import { Container } from "react-grid-system";
 import { Link } from "react-router-dom";
@@ -73,9 +73,9 @@ function Intro() {
                             </Link>
                         </button>
                         <button className="button button-lg button-light">
-                            <Link to="/contact">
+                            <a target="_blank" rel="noopener noreferrer" href="https://michaelangrivera.com">
                             <span className="text text-primary">Follow Me</span>
-                            </Link>
+                            </a>
                         </button>
                     </div>
                 </Container>
