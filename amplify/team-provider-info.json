@@ -14,6 +14,14 @@
     "categories": {
       "auth": {
         "cognitoe67c98d7": {}
+      },
+      "function": {
+        "marwebappquerystats": {
+          "accessKeySecret": "UyEMmdenb6YT+BX1SG0fHz021XL4uyWAcgoI6p6Q",
+          "accessKeyId": "AKIASY352AE3KLA5NJPS",
+          "deploymentBucketName": "amplify-marwebapp-dev-152921-deployment",
+          "s3Key": "amplify-builds/marwebappquerystats-58706c68563977364462-build.zip"
+        }
       }
     }
   }

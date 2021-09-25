@@ -1,6 +1,6 @@
 {
     "identityPoolName": "marwebapp_identitypool_e67c98d7",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "cognita4db2a0b",
     "userPoolName": "cognitoe67c98d7_userpool_a4db2a0b",
     "autoVerifiedAttributes": [
@@ -20,6 +20,7 @@
     "requiredAttributes": [
         "email"
     ],
+    "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
