@@ -81,7 +81,7 @@ const education = [
 ];
 const experience = [
     {
-        title: "Data Analyst/Engineer",
+        title: "Full Stack Engineer/Data Analyst",
         subtitle: "State Farm | Atlanta, GA",
         description: "Like a good neighbor, I help the State Farm BI Suite deliver meaningful data to business and customers. Hopefully this will save you a buck or two- if you have State Farm insurance. ",
         date: "(2020- present)",

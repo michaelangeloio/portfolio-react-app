@@ -5,13 +5,8 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 import { Link } from "react-router-dom";
 
 // Auxillary Packages
-import Popup from 'reactjs-popup';
+
 import 'reactjs-popup/dist/index.css';
-import MapPicker from 'react-google-map-picker'
-import Typewriter from 'typewriter-effect';
-import { Wave } from 'react-animated-text';
-
-
 
 // Components
 import Headline from "./components/common/headline";
@@ -252,7 +247,7 @@ function PortfolioHidden() {
         setLightboxIsOpen(!lightboxIsOpen);
     };
 
-    const [dp, setDp] = useState(true);
+    const [dp, setDp] = useState(false);
 
 
   
@@ -264,11 +259,10 @@ function PortfolioHidden() {
         <section className="section section-portfolio section-portfolio-1">
             <div className="display-spacing">
                 <Container className="container">
-                    <Headline label="Portfolio" title="Let's See My Work" divider_1={true} position="center" />
+                    <Headline label="Portfolio" title="Coming Soon" divider_1={true} position="center" />
                     <div className="div-center text-center">  
                 
             </div>
-            <iframe title="test" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiMzJiMWVkMWYtYmI3MS00YmUwLTg5YzYtNzQ2N2RkODY4NDU1IiwidCI6ImMxNWI1NjUwLTBmMzAtNDAxZC05YTMxLTVjN2MxNjc0MDM2ZiJ9" frameborder="0" allowFullScreen="true"></iframe>
 
                 {dp &&
                     <Tabs className="el-tabs el-tabs-1" selectedTabClassName="active">

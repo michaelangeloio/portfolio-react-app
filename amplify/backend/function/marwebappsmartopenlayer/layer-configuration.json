@@ -1,0 +1,15 @@
+{
+  "permissions": [
+    {
+      "type": "Public"
+    }
+  ],
+  "runtimes": [
+    {
+      "value": "python",
+      "name": "Python",
+      "runtimePluginId": "amplify-python-function-runtime-provider",
+      "layerExecutablePath": "python"
+    }
+  ]
+}

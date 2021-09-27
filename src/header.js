@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRouteMatch, NavLink, Link } from "react-router-dom";
 import { FaTwitter, FaGithub, FaInstagram } from "react-icons/fa";
-import {withRouter} from 'react-router'
+
 // Components
 // import SocialBar from "../../components/common/DemoOptions";
 
@@ -18,22 +18,22 @@ const links = [
         title: "Career",
         path: "resume",
     },
-    {
-        title: "Endurance",
-        path: "endurance"
-    },
-    {
-        title: "Percussion",
-        path: "percussion",
-    },
+    // {
+    //     title: "Endurance",
+    //     path: "endurance"
+    // },
+    // {
+    //     title: "Percussion",
+    //     path: "percussion",
+    // },
     {
         title: "Portfolio",
         path: "portfolio",
     },
-    {
-        title: "Blog",
-        path: "blog",
-    },
+    // {
+    //     title: "Blog",
+    //     path: "blog",
+    // },
     // {
     //     title: "Testimonial",
     //     path: "testimonial",

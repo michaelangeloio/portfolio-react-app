@@ -1,14 +1,14 @@
 
 import ReactDOM from "react-dom";
-import { HashRouter, BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 // Stylesheet
 import "./index.scss";
 
-import React, { useEffect, Suspense, useState} from "react";
+import React, { useEffect} from "react";
 import {Redirect, useRouteMatch } from "react-router-dom";
 
-import { Fragment } from 'react';
+
 
 // Sections
 import Blog from "./blog";
@@ -16,12 +16,12 @@ import About from "./about";
 import Intro from "./intro";
 import Header from "./header";
 import Resume from "./resume";
-import Endurance from "./endurance";
-import Percussion from "./percussion";
+// import Endurance from "./endurance";
+// import Percussion from "./percussion";
 import Contact from "./contact";
 import Portfolio from "./portfolio";
-import Testimonial from "./testimonial";
-import BlogSinglePost from "./blogsinglepost";
+// import Testimonial from "./testimonial";
+// import BlogSinglePost from "./blogsinglepost";
 import Landing from "./landing";
 
 
@@ -45,17 +45,17 @@ import Error404 from "./components/common/error404";
 
 import Amplify from 'aws-amplify';
 import Analytics from '@aws-amplify/analytics';
-import Auth from '@aws-amplify/auth';
+// import Auth from '@aws-amplify/auth';
 
-import awsconfig from './aws-exports';
-import { Logger } from 'aws-amplify';
+// import awsconfig from './aws-exports';
+// import { Logger } from 'aws-amplify';
 
 
 //Auxillary Packages
 import CookieConsent from "react-cookie-consent";
 
 
-
+import GetData from './components/api/GetS3Data';
 
 const routes = [
     {
@@ -74,14 +74,14 @@ const routes = [
         path: "resume",
         component: <Resume />,
     },
-    {
-        path: "endurance",
-        component: <Endurance />
-    },
-    {
-        path: "percussion",
-        component: <Percussion />,
-    },
+    // {
+    //     path: "endurance",
+    //     component: <Endurance />
+    // },
+    // {
+    //     path: "percussion",
+    //     component: <Percussion />,
+    // },
     {
         path: "portfolio",
         component: <Portfolio />,
@@ -90,14 +90,14 @@ const routes = [
         path: "blog",
         component: <Blog />,
     },
-    {
-        path: "blog/single-post",
-        component: <BlogSinglePost />,
-    },
-    {
-        path: "testimonial",
-        component: <Testimonial />,
-    },
+    // {
+    //     path: "blog/single-post",
+    //     component: <BlogSinglePost />,
+    // },
+    // {
+    //     path: "testimonial",
+    //     component: <Testimonial />,
+    // },
     {
         path: "contact",
         component: <Contact />,
@@ -128,6 +128,26 @@ function Root() {
     let { path } = useRouteMatch();
     
     
+// FOR FUTURE USE
+const [s3Data,
+    setS3Data] = React.useState({hits: []});
+  const [s3DataLoaded,
+    setS3DataLoaded] = React.useState(false);
+  const handleS3Data = (data) => {
+    console.log('loading data')
+    setS3Data(data);
+    setS3DataLoaded(true);
+  }
+  
+  useEffect(() => {
+    async function loadContent() {
+      const data = await GetData();
+      console.log(data); 
+      handleS3Data(data);
+    }
+    loadContent();
+},
+  []);
 
     useEffect(() => {
 
@@ -156,7 +176,7 @@ function Root() {
               secure: true
             }
              })
-        window.LOG_LEVEL = 'DEBUG';
+        // window.LOG_LEVEL = 'DEBUG';
         
             Analytics.autoTrack('event', {
                 // REQUIRED, turn on/off the auto tracking
@@ -202,7 +222,7 @@ function Root() {
   
             <CookieConsent
                       onAccept={() => {
-                        alert("User accepted cookie agreement");
+                        alert("Accepted!");
                         Analytics.record({ name: 'Cookie Accept' });
                       }}>
                            This website uses cookies to enhance the user experience.</CookieConsent>

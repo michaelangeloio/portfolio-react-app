@@ -11,6 +11,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "aws-amplify": "^4.2.0",
+    "axios": "^0.21.4",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",
     "react-animated-text": "^0.1.4",

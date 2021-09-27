@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "react-grid-system";
 import { useHistory } from "react-router-dom";
 
@@ -31,9 +31,6 @@ import LocalPizza from '@material-ui/icons/LocalPizza';
 import Fastfood from '@material-ui/icons/Fastfood';
 import EmojiFoodBeverage from '@material-ui/icons/EmojiFoodBeverage';
 import Kitchen from '@material-ui/icons/Kitchen';
-
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
-import Favorite from '@material-ui/icons/Favorite';
 
 import SportsBaseball from '@material-ui/icons/SportsBaseball';
 import SportsBasketball from '@material-ui/icons/SportsBasketball';

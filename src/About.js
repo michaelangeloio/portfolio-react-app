@@ -112,9 +112,9 @@ function About() {
                             <Link to="/resume" >
                             <button className="button button-md button-primary">See My Work History</button>
                             </Link>
-                            <Link to="/endurance">
+                            <a target="_blank" href="https://michaelangrivera.com" rel="noopener noreferrer">
                             <button className="button button-md button-primary">Check Out My Hobbies</button>
-                            </Link>  
+                            </a>  
 
                         </Col>
        

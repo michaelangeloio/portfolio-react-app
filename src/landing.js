@@ -9,7 +9,7 @@ import 'reactjs-popup/dist/index.css';
 import MapPicker from 'react-google-map-picker'
 import Typewriter from 'typewriter-effect';
 import { Wave } from 'react-animated-text';
-import Redirect from "react";
+
 
 
 
@@ -115,7 +115,7 @@ function LandingHidden() {
 
                             <Typewriter
                                 options={{
-                                    strings: ["Lets play a quick game!", "It'll be cool. Promise.", "Don't fret! Your responses will remain completely anonymous."],
+                                    strings: ["Lets play a quick game to show you what I like to do!", "It'll be cool. Promise.", "Don't fret! Your responses will remain completely anonymous."],
                                     autoStart: true,
                                     loop: false,
                                     pauseFor: 2700,
