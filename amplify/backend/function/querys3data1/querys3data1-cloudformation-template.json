@@ -99,8 +99,7 @@
           {
             "Ref": "functionmarwebappboto3layerArn"
           },
-          "arn:aws:lambda:us-east-1:190853022006:layer:awsdatawranglerlayer:1",
-          "arn:aws:lambda:us-east-1:190853022006:layer:marwebappsmartopenlayer-dev:2"
+          "arn:aws:lambda:us-east-1:190853022006:layer:marwebappsmartopenlayer-dev:4"
         ],
         "Timeout": 25
       }

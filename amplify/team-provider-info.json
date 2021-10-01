@@ -18,13 +18,13 @@
       "function": {
         "querys3data1": {
           "deploymentBucketName": "amplify-marwebapp-dev-152921-deployment",
-          "s3Key": "amplify-builds/querys3data1-41686f5376417a4c4c58-build.zip",
+          "s3Key": "amplify-builds/querys3data1-45667269716b56744465-build.zip",
           "accessKeyId": "AKIASY352AE3KLA5NJPS",
           "accessKeySecret": "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"
         },
         "marwebappboto3layer": {
           "deploymentBucketName": "amplify-marwebapp-dev-152921-deployment",
-          "s3Key": "amplify-builds/marwebappboto3layer-LambdaLayerVersion840c759f-build.zip"
+          "s3Key": "amplify-builds/marwebappboto3layer-LambdaLayerVersion14fbe750-build.zip"
         },
         "marwebappsmartopenlayer": {
           "deploymentBucketName": "amplify-marwebapp-dev-152921-deployment",
