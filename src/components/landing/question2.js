@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-grid-system";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 
 // Components
@@ -48,8 +48,11 @@ import DirectionsRunOutlined from '@material-ui/icons/DirectionsRunOutlined';
 import SportsGolfOutlined from '@material-ui/icons/SportsGolfOutlined';
 import SportsSoccerOutlined from '@material-ui/icons/SportsSoccerOutlined';
 
+//Redux
+import { addFormResponse, removeFormResponse } from '../../actions/question2Answer';
+import { useDispatch, useSelector } from "react-redux";
 
-
+import  { Analytics } from 'aws-amplify';
 
 //Styling
 
@@ -96,11 +99,47 @@ const useStyles2 = makeStyles((theme) => ({
     function Question2()  {
 
 
+      const answerState2 = useSelector( state => state.formData.loaded)
+      const formDataFinal = useSelector(state => state.formData)
+      const gMapsDataFinal = useSelector(state => state.gMapsData)
+  
+      
+
+      const dispatch = useDispatch();
+
         const history = useHistory();
 
         const routeChange = () =>{ 
             let path = `/portfolio`; 
+            handleFinish();
             history.push(path);
+            console.log(formDataFinal.data.whoValue)
+            Analytics.record({
+              name: 'form_who', 
+              // Attribute values must be strings
+              attributes: { form_response: JSON.stringify(formDataFinal.data.whoValue) }
+          });
+
+          console.log(formDataFinal.data.foodValue)
+            Analytics.record({
+              name: 'form_food', 
+              // Attribute values must be strings
+              attributes: { form_response: JSON.stringify(formDataFinal.data.foodValue) }
+          });
+          console.log(formDataFinal.data.sportValue)
+            Analytics.record({
+              name: 'form_sport', 
+              // Attribute values must be strings
+              attributes: { form_response: JSON.stringify(formDataFinal.data.sportValue) }
+          });
+          console.log(gMapsDataFinal.data)
+            Analytics.record({
+              name: 'form_location', 
+              // Attribute values must be strings
+              attributes: { form_response: JSON.stringify(gMapsDataFinal.data) }
+          });
+          
+          
           }
 
         //Stepper Properties
@@ -129,7 +168,7 @@ const useStyles2 = makeStyles((theme) => ({
 
         //Checkbox Properties
         const classesCheckbox = useStyles2()
-        const [state, setState] = React.useState({
+        const [sportQuestionValue, setState] = React.useState({
             baseball: false,
             basketball: false,
             football: false,
@@ -139,8 +178,25 @@ const useStyles2 = makeStyles((theme) => ({
           });
         
           const handleChange = (event) => {
-            setState({ ...state, [event.target.name]: event.target.checked });
+            setState({ ...sportQuestionValue, [event.target.name]: event.target.checked });
           };
+
+
+        function handleFinish () {
+          dispatch(addFormResponse({
+            foodValue: foodValue,
+            whoValue: whoValue,
+            sportValue: sportQuestionValue
+            
+          }))
+        }
+
+        const handleQuestionRefresh = () => {
+          dispatch(removeFormResponse())
+        }
+
+        
+
 
         //Stepper
         function getSteps() {
@@ -191,27 +247,27 @@ const useStyles2 = makeStyles((theme) => ({
                     <FormGroup row className={classes.formGroup}>
 
                     <FormControlLabel 
-                            control={<Checkbox checked={state.checkedG} onChange={handleChange} name="baseball" icon={<SportsBaseballOutlined />} checkedIcon={<SportsBaseball />} />}
+                            control={<Checkbox checked={sportQuestionValue.checkedG} onChange={handleChange} name="baseball" icon={<SportsBaseballOutlined />} checkedIcon={<SportsBaseball />} />}
                             label="Baseball"
                         />
                     <FormControlLabel 
-                            control={<Checkbox checked={state.checkedG} onChange={handleChange} name="basketball" icon={<SportsBasketballOutlined />} checkedIcon={<SportsBasketball />} />}
+                            control={<Checkbox checked={sportQuestionValue.checkedG} onChange={handleChange} name="basketball" icon={<SportsBasketballOutlined />} checkedIcon={<SportsBasketball />} />}
                             label="Basketball"
                         />
                     <FormControlLabel 
-                            control={<Checkbox checked={state.checkedG} onChange={handleChange} name="football" icon={<SportsFootballOutlined />} checkedIcon={<SportsFootball />} />}
+                            control={<Checkbox checked={sportQuestionValue.checkedG} onChange={handleChange} name="football" icon={<SportsFootballOutlined />} checkedIcon={<SportsFootball />} />}
                             label="Football"
                         />
                     <FormControlLabel 
-                            control={<Checkbox checked={state.checkedG} onChange={handleChange} name="track" icon={<DirectionsRunOutlined />} checkedIcon={<DirectionsRun />} />}
+                            control={<Checkbox checked={sportQuestionValue.checkedG} onChange={handleChange} name="track" icon={<DirectionsRunOutlined />} checkedIcon={<DirectionsRun />} />}
                             label="Track and Field"
                         />
                     <FormControlLabel 
-                            control={<Checkbox checked={state.checkedG} onChange={handleChange} name="golf" icon={<SportsGolfOutlined />} checkedIcon={<SportsGolf />} />}
+                            control={<Checkbox checked={sportQuestionValue.checkedG} onChange={handleChange} name="golf" icon={<SportsGolfOutlined />} checkedIcon={<SportsGolf />} />}
                             label="Golf"
                         />
                      <FormControlLabel 
-                            control={<Checkbox checked={state.checkedG} onChange={handleChange} name="soccer" icon={<SportsSoccerOutlined />} checkedIcon={<SportsSoccer />} />}
+                            control={<Checkbox checked={sportQuestionValue.checkedG} onChange={handleChange} name="soccer" icon={<SportsSoccerOutlined />} checkedIcon={<SportsSoccer />} />}
                             label="Soccer"
                         />                       
 
@@ -229,11 +285,50 @@ const useStyles2 = makeStyles((theme) => ({
 
     
     return (
-        
+        <div>
+      {answerState2 &&
+        <section className="section section-portfolio section-portfolio-1">
+       <div className="display-spacing">
+                      <Container className="container">
+                          <Headline label="" title="Quick Game - Second Question" divider_1={true} position="center" />
+                          <div className="div-center text-center">  
+                    <Typography variant = "h4" style = {{marginBottom: 20}}>You've already answered!</Typography>
+      
+      
+      
+                    <Container>
+                    <Link to = "/landing/question2">
+                          <button
+                            className="button button-lg button-primary"
+                          >
+                            <span className="wave"></span>
+                          
+                            Go to Portfolio
+                    
+      
+                          </button>
+                          </Link>
+                          <button className="button button-lg button-light" onClick = {handleQuestionRefresh} >
+                      
+                              <span className="text text-primary">Answer Again</span>
+                      
+                          </button>
+                    
+                      </Container>
+      
+                      </div> 
+                      </Container>
+                      </div>
+                      </section>
+       }
+      
+
+{!answerState2 &&
+
         <section className="section section-portfolio section-portfolio-1">
             <div className="display-spacing">
                 <Container className="container">
-                    <Headline label="" title="Welcome" divider_1={true} position="center" />
+                    <Headline label="" title="Quick Game - Second Question" divider_1={true} position="center" />
                     <div className="div-center text-center">  
                     <ThemeProvider theme={darkTheme}>
                     <div className={classes.root}>
@@ -260,7 +355,7 @@ const useStyles2 = makeStyles((theme) => ({
                                     onClick={handleNext}
                                     className={classes.button}
                                 >
-                                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                                    {activeStep === steps.length - 1 ?  <Typography > Finish </Typography>  : 'Next'}
                                 </Button>
                                 </div>
                             </div>
@@ -273,7 +368,7 @@ const useStyles2 = makeStyles((theme) => ({
                             <Divider/>
                         <Typography className = {classes.root}>
                             <Button variant="contained" color="primary" onClick={routeChange} className={classes.button}>
-                                Show me the money!
+                                Let's see what's this all about!
                             </Button>
                             </Typography>
                         <Button onClick={handleReset} className={classes.button}>
@@ -290,7 +385,8 @@ const useStyles2 = makeStyles((theme) => ({
          
             </div>
         </section>
-     
+    }
+        </div>
     );
 }
 
