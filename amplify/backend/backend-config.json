@@ -14,20 +14,6 @@
     }
   },
   "function": {
-    "querys3data1": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "marwebappboto3layer",
-          "attributes": [
-            "Arn"
-          ]
-        }
-      ]
-    },
     "marwebappboto3layer": {
       "providerPlugin": "awscloudformation",
       "service": "LambdaLayer",
@@ -39,20 +25,5 @@
       "build": true
     }
   },
-  "api": {
-    "marwebapp": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "querys3data1",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    }
-  }
+  "api": {}
 }

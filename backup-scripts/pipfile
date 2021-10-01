@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-src = {editable = true, path = "./src"}
+smart-open = {extras = ["s3"], version = "*"}
 
 [requires]
 python_version = "3.8"
