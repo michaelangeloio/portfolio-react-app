@@ -110,7 +110,7 @@ const useStyles2 = makeStyles((theme) => ({
         const history = useHistory();
 
         const routeChange = () =>{ 
-            let path = `/portfolio`; 
+            let path = `/site_stats`; 
             handleFinish();
             history.push(path);
             console.log(formDataFinal.data.whoValue)
@@ -173,7 +173,7 @@ const useStyles2 = makeStyles((theme) => ({
             basketball: false,
             football: false,
             track: false,
-            gold: false,
+            SportsGolf: false,
             soccer: false
           });
         

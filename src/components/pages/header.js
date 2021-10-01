@@ -27,6 +27,10 @@ const links = [
     //     path: "percussion",
     // },
     {
+        title: "Stats",
+        path: "site_stats"
+    },
+    {
         title: "Portfolio",
         path: "portfolio",
     },

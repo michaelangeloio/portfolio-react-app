@@ -4,12 +4,14 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { Link } from "react-router-dom";
 
+
 // Auxillary Packages
 
 import 'reactjs-popup/dist/index.css';
 
 // Components
 import Headline from "../common/headline";
+
 
 const portfolio = [
     {
@@ -259,10 +261,14 @@ function PortfolioHidden() {
         <section className="section section-portfolio section-portfolio-1">
             <div className="display-spacing">
                 <Container className="container">
-                    <Headline label="Portfolio" title="Coming Soon" divider_1={true} position="center" />
+                    <Headline label="Portfolio" title="Game Results" divider_1={true} position="center" />
                     <div className="div-center text-center">  
-                
+                   
             </div>
+
+
+       
+             
 
                 {dp &&
                     <Tabs className="el-tabs el-tabs-1" selectedTabClassName="active">
@@ -305,6 +311,9 @@ function PortfolioHidden() {
                         </Modal>
                     ) : null}
                 </ModalGateway>
+
+
+
             </div>
         </section>
      

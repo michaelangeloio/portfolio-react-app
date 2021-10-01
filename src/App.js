@@ -15,6 +15,7 @@ import Resume from "./components/pages/resume";
 import Contact from "./components/pages/contact";
 import Portfolio from "./components/pages/portfolio";
 import Landing from "./components/pages/landing";
+import Stats from "./components/pages/stats";
 // import Blog from "./deprecated_components/blog"; import Endurance from
 // "./endurance"; import Percussion from "./percussion"; import Testimonial from
 // "./testimonial"; import BlogSinglePost from "./blogsinglepost"; landing
@@ -67,6 +68,10 @@ const routes = [
   {
     path: "contact",
     component: <Contact/>
+  },
+  {
+    path: "site_stats",
+    component: <Stats/>
   },
 
   //Landing Pages
