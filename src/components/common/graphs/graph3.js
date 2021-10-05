@@ -9,6 +9,8 @@ import {
 
 import {Grid as MuiGrid} from '@material-ui/core/';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import {Link} from 'react-router-dom';
 
 
   const data = [
@@ -74,7 +76,7 @@ function Graph3() {
 
       <MuiGrid  item style = {{marginBottom: 10, marginTop: 20}} align= "center">
           <Typography variant="h5">
-          So one of your Favorite Sports is {getKeyByValue(formData.sportValue, true)} ? </Typography>
+          So a favorite sport of yours is {getKeyByValue(formData.sportValue, true)}? </Typography>
         </MuiGrid>
         <MuiGrid  item style = {{marginBottom: 10}} align= "center">
           <Typography style = {{fontSize: 14}}>
@@ -92,7 +94,33 @@ function Graph3() {
       </Funnel>
     </FunnelChart>
     </MuiGrid>
+    <MuiGrid  item style = {{marginBottom: 10, marginTop: 10}} align= "center">
+          <Typography style = {{fontSize: 13}}>
+          Data Last Updated: 10-05-2021 </Typography>
+        </MuiGrid>
+    <MuiGrid  item style = {{marginBottom: 15, marginTop: 20}} align= "center">
+          <Typography style = {{fontSize: 14}}>
+          Pretty neat right? I have other projects too! If you'd like to see more, go to my... </Typography>
+        </MuiGrid>
+        <Link to = "/portfolio">
+                    <button
+                      className="button button-lg button-primary"
+                      data-amplify-analytics-on='click'
+                      data-amplify-analytics-name='see_more_button'
+                      data-amplify-analytics-attrs='attr1:attr1_value,attr2:attr2_value' >
+                      <span className="wave"></span>
+                    
+                      Portfolio
+              
 
+                    </button>
+                    </Link>
+                    <button className="button button-lg button-light" >
+                
+                        <a target="_blank" href="https://michaelangrivera.com" rel="noopener noreferrer" className="text text-primary">Follow Me</a>
+                
+                    </button>
+              
       </MuiGrid>
   
     </div>

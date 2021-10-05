@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 function prompt(state, promptType) {
-  const foodValueMap = ['Pizza', 'Burger', 'Tea', 'Home Cookin']
+  const foodValueMap = ['Pizza ', 'Burger ', 'Tea ', 'Home Cookin ']
 
   switch (promptType) {
     case 'foodPrompt':
@@ -24,8 +24,7 @@ function prompt(state, promptType) {
 
           return (
             <Typography align="center">
-              So, {answer}
-              sounds good right now? Let's see what everyone else wants:</Typography>
+              So, {answer} sounds good right now? Let's see what everyone else wants:</Typography>
           )
         }
       } catch (error) {
