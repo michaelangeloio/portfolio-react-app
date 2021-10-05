@@ -261,7 +261,7 @@ function PortfolioHidden() {
         <section className="section section-portfolio section-portfolio-1">
             <div className="display-spacing">
                 <Container className="container">
-                    <Headline label="Portfolio" title="Game Results" divider_1={true} position="center" />
+                    <Headline label="Portfolio" title="Coming Soon" divider_1={true} position="center" />
                     <div className="div-center text-center">  
                    
             </div>

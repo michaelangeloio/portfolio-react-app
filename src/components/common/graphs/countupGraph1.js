@@ -17,26 +17,31 @@ function CountupGraph1() {
 
   
       <MuiGrid container direction="column" alignItems="center" style = {{marginTop: -60}}>
-        <MuiGrid justifyContent="center" item>
+        <MuiGrid  item>
           <Typography variant="h6" style = {{color: "#00e676"}}>
-            I Love Data. I Love Apps.</Typography>
+            I Love Apps. I Love Data.</Typography>
         </MuiGrid>
-        <MuiGrid justifyContent="center" item>
+        <MuiGrid  item>
           <Typography >
             This website is a perfect example of that!</Typography>
         </MuiGrid>
-        <MuiGrid justifyContent="center" item  style = {{marginTop: 30, marginBottom: 20}}>
+        <MuiGrid  item  style = {{marginTop: 20, marginBottom: 20}}>
           <Typography style = {{fontSize: 12}}>
-            I've programmed some real time statistics. Let's see them...</Typography>
+            I've programmed some charts for you. Let's see them...</Typography>
         </MuiGrid>
-        <MuiGrid justifyContent="center" item>
+        <MuiGrid  item>
           <Typography variant = "h2" >
           <CountUp end={data} duration={6}/>
           </Typography>
         </MuiGrid>
-        <MuiGrid justifyContent="center" item>
+        <MuiGrid  item>
           <Typography variant = "h6" style = {{color: "#00e676"}} >
           Unique Visitors
+          </Typography>
+        </MuiGrid>
+        <MuiGrid  item>
+          <Typography  style = {{color: "white", fontSize: 10}} >
+          on this website- cool!
           </Typography>
         </MuiGrid>
      

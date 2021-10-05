@@ -12,6 +12,8 @@ import 'reactjs-popup/dist/index.css';
 import Headline from "../common/headline";
 import CountupGraph1 from "../common/graphs/countupGraph1";
 import Graph1 from "../common/graphs/graph1";
+import Graph2 from "../common/graphs/graph2";
+import Graph3 from "../common/graphs/graph3";
 import {Typography} from "@material-ui/core";
 
 function Stats() {
@@ -34,14 +36,16 @@ function Stats() {
       <div className="display-spacing">
         <Container className="container">
           <Headline
-            label="Portfolio"
-            title="Game Results"
+            label="My Game"
+            title="LIVE RESULTS"
             divider_1={true}
             position="center"/>
           <div className="div-center text-center"></div>
           <CountupGraph1/>
 
           <Graph1/>
+          <Graph2/>
+          <Graph3/>
 
         </Container>
 

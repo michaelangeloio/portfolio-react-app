@@ -140,7 +140,7 @@ function App() {
         secure: true
       }
     })
-    window.LOG_LEVEL =  'DEBUG';
+    // window.LOG_LEVEL =  'DEBUG';
 
         // Analytics.autoTrack('event', {
             //     // REQUIRED, turn on/off the auto tracking

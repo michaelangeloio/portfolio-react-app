@@ -5,12 +5,17 @@ import {
   Tooltip,
   Sector,
   Cell,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Legend
+
 } from 'recharts';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend, Tooltip as Tooltip2 } from 'recharts';
+
+import {useSelector} from 'react-redux';
 
 import {Grid as MuiGrid} from '@material-ui/core/';
 import Typography from '@material-ui/core/Typography';
+
+import Prompt from '../graphPrompt';
 
 const data = [
   {
@@ -22,45 +27,48 @@ const data = [
   }
 ];
 
-
 const data2 = [
-    {
-      name: 'iPhone',
-      people: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: 'Macbook',
-      people: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'PC',
-      people: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: 'Android',
-      people: 2780,
-      pv: 3908,
-      amt: 2000,
-    }
-  ];
+  { name: 'Pizza', value: 400 },
+  { name: 'Burger', value: 300 },
+  { name: 'Tea', value: 300 },
+  { name: 'Home Cookin', value: 200 },
+];
+
+
+const COLORS = ['#bfa721', '#00C49F', '#00C49F', '#00C49F'];
+
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
 
 function Graph1() {
+  const foodAnswerState = useSelector( state => state.formData.data )
+  console.log("testing")
+  console.log(foodAnswerState)
+
+  const foodPrompt = Prompt( foodAnswerState,  'foodPrompt')
+  
+
+
   return (
     <div>
-      <MuiGrid container direction="column" alignItems="center" style = {{marginTop: 30}}>
+      <MuiGrid container justifyContent = "center" direction="column" alignItems="center" style = {{marginTop: 30}}>
       <div className="divider divider-1"></div>
-        <MuiGrid justify="center" item>
+        <MuiGrid  item>
           <Typography variant="h5">
             Strangers vs Friends</Typography>
         </MuiGrid>
-        <MuiGrid justify="center" item>
-          <Typography >
+        <MuiGrid  item>
+          <Typography align= "center" >
             Let's see who knows me here...</Typography>
         </MuiGrid>
         <MuiGrid item style = {{marginTop: 10}}>
@@ -81,34 +89,33 @@ function Graph1() {
           </PieChart>
 
         </MuiGrid>
-
-        <MuiGrid justify="center" item>
-          <Typography >
-            Let's check what devices people are using to view this</Typography>
-        </MuiGrid>
-        <MuiGrid item>
-        <BarChart
-          width={370}
-          height={300}
-          data={data2}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-          animationBegin = {6700}
-        >
-         
-          <XAxis dataKey="name"  fill="#00e676"/>
-         
-          <Tooltip labelStyle = {{color: "black"}}/>
+        <MuiGrid style = {{maxWidth: 300}} item>
        
+            {foodPrompt}
          
-          <Bar dataKey="people" fill="#8884d8" />
-        </BarChart>
         </MuiGrid>
-      </MuiGrid>
+        <MuiGrid item style = {{marginTop: 10}}>
+        <PieChart width={250} height={280}>
+          <Pie
+            data={data2}
+            cx="50%"
+            cy="50%"
+            labelLine={false}
+            label={renderCustomizedLabel}
+            outerRadius={80}
+            
+            dataKey="value"
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index]} />
+            ))}
+          </Pie>
+          <Tooltip/>
+<Legend/>
+        </PieChart>
+    </MuiGrid>
+        </MuiGrid>
+
     </div>
   );
 }

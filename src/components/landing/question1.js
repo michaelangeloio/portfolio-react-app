@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Container } from "react-grid-system";
 import { useHistory } from "react-router-dom";
 import {Link } from "react-router-dom";
@@ -11,13 +11,15 @@ import { Wave } from 'react-animated-text';
 import Typography from "@material-ui/core/Typography";
 
 // Redux
-import { addGMapsResponse, removeGMapsResponse } from '../../actions/question1Answer';
+import { addGMapsResponse, removeGMapsResponse, fetchDecodeData } from '../../actions/question1Answer';
 import { useDispatch, useSelector } from "react-redux";
 
 
 
 // Components
 import Headline from "../common/headline";
+import { ConsoleLogger } from "@aws-amplify/core";
+import GeoDecode from "../api/getGeoDecode";
 
 
 
@@ -40,27 +42,21 @@ function Question1() {
     console.log("test")
 
     const dispatch = useDispatch();
+    
 
-    useEffect(() => {
-        // checking if localStorage has a "hasVisited" key
-        if (localStorage.getItem("hasVisited")){
-            // setting the state of welcomeMessage to "Welcome back!" if it does
-        } else {
-            // creating the "hasVisited" key value pair in localStorage if it doesnt exist
-          localStorage.setItem("hasVisited", "true")
-          localStorage.setItem("pageDirect", "/about")
-        }
-        // we are only running this useEffect on the first render of app because we passed an
-        // empty array
-      },[])
+   
     
 
     const history = useHistory();
 
-    const routeChange = () =>{ 
+    
+    const routeChange =  () =>{ 
       
       let path = `/landing/question2`; 
-      dispatch(addGMapsResponse(location))
+   
+
+      dispatch(addGMapsResponse(location));
+      dispatch(fetchDecodeData(location));
       history.push(path);
       console.log('clicked')
       
@@ -76,6 +72,7 @@ function Question1() {
     const [zoom, setZoom] = useState(DefaultZoom);
   
     function handleChangeLocation (lat, lng){
+      
       setLocation({lat:lat, lng:lng});
     }
     

@@ -297,7 +297,7 @@ const useStyles2 = makeStyles((theme) => ({
       
       
                     <Container>
-                    <Link to = "/landing/question2">
+                    <Link to = "/stats">
                           <button
                             className="button button-lg button-primary"
                           >

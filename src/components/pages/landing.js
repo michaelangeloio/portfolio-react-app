@@ -24,7 +24,8 @@ import Headline from "../common/headline";
 import { useDispatch, useSelector } from "react-redux";
 import {playedGame } from '../../actions/playedGame';
 
-
+//MUI
+import Grid from '@material-ui/core/Grid';
 
 
 const DefaultLocation = { lat: 40.752336836965696, lng: -73.98232417652586};
@@ -82,7 +83,7 @@ function Landing() {
                 <Container className="container">
                     <Headline label="" title="Welcome" divider_1={true} position="center" />
                     <div className="div-center text-center">  
-                
+                    <Grid container direction="column" alignItems="center" style = {{marginTop: 30}}> 
                 {firstPrompt &&
                     <Popup
                         trigger={ <button><h2 > Enter </h2></button>}
@@ -98,7 +99,7 @@ function Landing() {
                             <div className="header"> Hold up a sec!</div>
                             <div className="content div-center text-center">
                             {' '}
-
+                          
                             <Typewriter
                                 options={{
                                     strings: ["Lets play a quick game to show you what I like to do!", "It'll be cool. Promise.", "Don't fret! Your responses will remain completely anonymous."],
@@ -157,6 +158,7 @@ function Landing() {
                             
                                 Skip (lame)
                                 </Typography>
+                             
                               </button> 
                                </div>
                             </div> 
@@ -165,8 +167,9 @@ function Landing() {
                     )}
                 </Popup>
                 }
+                     </Grid>
                 </div> 
-                
+           
     
                 </Container>
           
