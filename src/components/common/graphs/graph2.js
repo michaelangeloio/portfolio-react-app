@@ -1,15 +1,7 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import {
-  PieChart,
-  Pie,
-  Tooltip,
-  Sector,
-  Cell,
-  ResponsiveContainer
-} from 'recharts';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
-import { BarChart, Bar,  Tooltip as Tooltip2 } from 'recharts';
+
+import { LineChart, Line, XAxis, Tooltip, Legend, BarChart, Bar } from 'recharts';
 import {Grid as MuiGrid} from '@material-ui/core/';
 import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';

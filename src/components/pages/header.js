@@ -94,17 +94,17 @@ function Header() {
                 <div className="header-follow">
                     <ul>
                         <li>
-                            <a href="https://instagram.com/michaelangrivera">
+                            <a href="https://instagram.com/michaelangrivera" target="_blank"  rel="noopener noreferrer">
                                 <i className="ti-instagram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/michaelangelorivera/">
+                            <a href="https://www.linkedin.com/in/michaelangelorivera/" target="_blank"  rel="noopener noreferrer">
                                 <i className="ti-linkedin"></i>
                             </a>
                         </li>                        
                         <li>
-                            <a href="https://github.com/michaelangrivera?tab=repositories">
+                            <a href="https://github.com/michaelangrivera?tab=repositories" target="_blank" rel="noopener noreferrer">
                                 <i className="ti-github"></i>
                             </a>
                         </li>

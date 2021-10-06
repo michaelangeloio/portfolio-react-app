@@ -18,11 +18,11 @@
       "function": {
         "marwebappboto3layer": {
           "deploymentBucketName": "amplify-marwebapp-dev-152921-deployment",
-          "s3Key": "amplify-builds/marwebappboto3layer-LambdaLayerVersion3272bfad-build.zip"
+          "s3Key": "amplify-builds/marwebappboto3layer-LambdaLayerVersionaf737f22-build.zip"
         },
         "marwebappsmartopenlayer": {
           "deploymentBucketName": "amplify-marwebapp-dev-152921-deployment",
-          "s3Key": "amplify-builds/marwebappsmartopenlayer-LambdaLayerVersion8d69486c-build.zip"
+          "s3Key": "amplify-builds/marwebappsmartopenlayer-LambdaLayerVersioncd4b1920-build.zip"
         }
       }
     }

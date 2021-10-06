@@ -22,7 +22,7 @@ import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import { FormControl, FormGroup , FormControlLabel, Checkbox} from "@material-ui/core";
 import Divider from '@material-ui/core/Divider';
-import ButtonGroup from '@material-ui/core/ButtonGroup'
+
 
 //Icon Components
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -86,15 +86,15 @@ const useStyles = makeStyles((theme) => ({
  
 }));
 
-const useStyles2 = makeStyles((theme) => ({
-    root: {
-      display: 'flex',
-    },
-    formControl: {
-      margin: theme.spacing(3),
+// const useStyles2 = makeStyles((theme) => ({
+//     root: {
+//       display: 'flex',
+//     },
+//     formControl: {
+//       margin: theme.spacing(3),
  
-    },
-  }));
+//     },
+//   }));
 
     function Question2()  {
 
@@ -167,7 +167,7 @@ const useStyles2 = makeStyles((theme) => ({
         const [foodValue, setFoodValue] = React.useState(0);
 
         //Checkbox Properties
-        const classesCheckbox = useStyles2()
+        // const classesCheckbox = useStyles2()
         const [sportQuestionValue, setState] = React.useState({
             baseball: false,
             basketball: false,

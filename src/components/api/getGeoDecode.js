@@ -1,6 +1,6 @@
 import Geocode from "react-geocode";
 
-import React, {useEffect, useState} from "react";
+
 async function GeoDecode(lat, lng) {
   Geocode.setApiKey(process.env.REACT_APP_GEODECODE_API_KEY);
 
@@ -25,7 +25,7 @@ async function GeoDecode(lat, lng) {
   try {
 
     const response = await Geocode.fromLatLng(lat, lng);
-    const address = response.results[0].formatted_address;
+    // const address = response.results[0].formatted_address;
     let city,
       state,
       country;
@@ -50,6 +50,7 @@ async function GeoDecode(lat, lng) {
     let space = ", ";
     let promptAddress = state + space + country;
     console.log(promptAddress)
+    console.log(city)
     return (promptAddress)
 
   } catch (error) {

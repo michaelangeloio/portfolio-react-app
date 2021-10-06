@@ -9,8 +9,8 @@ import {
 
 import {Grid as MuiGrid} from '@material-ui/core/';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 
   const data = [
@@ -75,8 +75,13 @@ function Graph3() {
       <div className="divider divider-1"></div>
 
       <MuiGrid  item style = {{marginBottom: 10, marginTop: 20}} align= "center">
-          <Typography variant="h5">
-          So a favorite sport of yours is {getKeyByValue(formData.sportValue, true)}? </Typography>
+          
+         {formDataState ? <Typography variant="h5" align = "center"> So a favorite sport of yours is {getKeyByValue(formData.sportValue, true)}? </Typography> :   <Typography align="center">
+              Looks like you have not played the game! To get the most out of this experience,
+              please 
+              <Link href="/landing" color="inherit">
+                <Button variant="contained" color="success" style = {{margin: 4}}>play</Button>
+              </Link>!</Typography>}
         </MuiGrid>
         <MuiGrid  item style = {{marginBottom: 10}} align= "center">
           <Typography style = {{fontSize: 14}}>
