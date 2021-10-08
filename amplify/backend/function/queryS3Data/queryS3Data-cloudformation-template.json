@@ -101,12 +101,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "marwebappLambdaRolea54b24ef",
+            "marwebappLambdaRole46fb54e1",
             {
               "Fn::Join": [
                 "",
                 [
-                  "marwebappLambdaRolea54b24ef",
+                  "marwebappLambdaRole46fb54e1",
                   "-",
                   {
                     "Ref": "env"

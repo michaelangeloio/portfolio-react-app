@@ -12,7 +12,7 @@ export const loadS3Data = () => async (dispatch) => {
     try {
 
 
-    const apiData = await Axios.get('https://osdn1rxnr3.execute-api.us-east-1.amazonaws.com/dev/items');
+    const apiData = await Axios.get('https://nmdog5xf88.execute-api.us-east-1.amazonaws.com/dev/items');
     
     console.log(apiData.data)
     parseData(apiData.data)

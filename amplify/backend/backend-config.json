@@ -22,7 +22,7 @@
     }
   },
   "api": {
-    "marwebappAPI": {
+    "marwebappapi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
