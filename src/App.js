@@ -37,6 +37,12 @@ import Analytics from '@aws-amplify/analytics';
 import CookieConsent from "react-cookie-consent";
 import GetData from './components/api/GetS3Data';
 
+//REDUX
+import { useDispatch } from "react-redux";
+
+//REDUX ACTIONS
+import {loadS3Data} from "./actions/getS3Data";
+
 
 //TESTING
 import  {addGMapsResponse} from './actions/question1Answer';
@@ -92,25 +98,25 @@ function App() {
 
   let {path} = useRouteMatch();
 
+  const dispatch = useDispatch();
+
   // FOR FUTURE USE
-  const [s3Data,
-    setS3Data] = React.useState({hits: []});
-  const [s3DataLoaded,
-    setS3DataLoaded] = React.useState(false);
-  const handleS3Data = (data) => {
-    console.log('loading data')
-    setS3Data(data);
-    setS3DataLoaded(true);
-  }
+  // const [s3Data,
+  //   setS3Data] = React.useState({hits: []});
+  // const [s3DataLoaded,
+  //   setS3DataLoaded] = React.useState(false);
+  // const handleS3Data = (data) => {
+  //   console.log('loading data')
+  //   setS3Data(data);
+  //   setS3DataLoaded(true);
+  // }
 
   useEffect(() => {
-    async function loadContent() {
-      const data = await GetData();
-      console.log(data);
-      handleS3Data(data);
+    function loadContent() {
+     dispatch(loadS3Data())
     }
     loadContent();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
 
