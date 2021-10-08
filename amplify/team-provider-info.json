@@ -20,7 +20,7 @@
           "accessKeyId": "AKIASY352AE3FLZCQI55",
           "accessKeySecret": "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",
           "deploymentBucketName": "amplify-marwebapp-dev-152921-deployment",
-          "s3Key": "amplify-builds/queryS3Data-4b53306162656c4d6473-build.zip"
+          "s3Key": "amplify-builds/queryS3Data-352f4a55365a44612f2f-build.zip"
         }
       }
     }

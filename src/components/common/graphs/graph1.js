@@ -56,7 +56,7 @@ function Graph1() {
 
   const foodPrompt = Prompt( foodAnswerState,  'foodPrompt')
   
-  const responseWhoData = useSelector(state => state.s3Data.data.data)
+  const responseWhoData = useSelector(state => state.s3Data.data)
 
   return (
     <div>

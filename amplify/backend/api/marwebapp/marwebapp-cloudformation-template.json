@@ -37,16 +37,16 @@
         
         
         
-      "marwebappapi": {
+      "marwebapp": {
         "Type": "AWS::ApiGateway::RestApi",
         "Properties": {
           "Description": "",
-          "Name": "marwebappapi",
+          "Name": "marwebapp",
           "Body": {
             "swagger": "2.0",
             "info": {
               "version": "2018-05-24T17:52:00Z",
-              "title": "marwebappapi"
+              "title": "marwebapp"
             },
             "host": {
                 "Fn::Join": [
@@ -324,7 +324,7 @@
       
         
 
-        "functionqueryS3DataPermissionmarwebappapi": {
+        "functionqueryS3DataPermissionmarwebapp": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
@@ -348,7 +348,7 @@
                             },
                             ":",
                             {
-                                "Ref": "marwebappapi"
+                                "Ref": "marwebapp"
                             },
                             "/*/*/*"
                         ]
@@ -359,7 +359,7 @@
         
         
 
-      "DeploymentAPIGWmarwebappapi": {
+      "DeploymentAPIGWmarwebapp": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",
@@ -373,7 +373,7 @@
             ]
           },
           "RestApiId": {
-            "Ref": "marwebappapi"
+            "Ref": "marwebapp"
           }
         }
       }
@@ -381,15 +381,15 @@
     "Outputs": {
         "RootUrl": {
             "Description": "Root URL of the API gateway",
-            "Value": {"Fn::Join": ["", ["https://", {"Ref": "marwebappapi"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
+            "Value": {"Fn::Join": ["", ["https://", {"Ref": "marwebapp"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
         },
         "ApiName": {
           "Description": "API Friendly name",
-          "Value": "marwebappapi"
+          "Value": "marwebapp"
         },
         "ApiId": {
           "Description": "API ID (prefix of API URL)",
-          "Value": {"Ref": "marwebappapi"}
+          "Value": {"Ref": "marwebapp"}
         }
     }
   }

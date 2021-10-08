@@ -9,8 +9,8 @@
       "policyResourceName": "/items"
     }
   ],
-  "resourceName": "marwebappapi",
-  "apiName": "marwebappapi",
+  "resourceName": "marwebapp",
+  "apiName": "marwebapp",
   "functionArns": [
     {
       "lambdaFunction": "queryS3Data"
