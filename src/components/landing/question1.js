@@ -18,8 +18,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Components
 import Headline from "../common/headline";
-import { ConsoleLogger } from "@aws-amplify/core";
-import GeoDecode from "../api/getGeoDecode";
 
 
 

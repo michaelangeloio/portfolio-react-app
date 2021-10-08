@@ -14,16 +14,27 @@
     }
   },
   "function": {
-    "marwebappboto3layer": {
+    "queryS3Data": {
+      "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "LambdaLayer",
-      "build": true
-    },
-    "marwebappsmartopenlayer": {
-      "providerPlugin": "awscloudformation",
-      "service": "LambdaLayer",
-      "build": true
+      "service": "Lambda",
+      "dependsOn": []
     }
   },
-  "api": {}
+  "api": {
+    "marwebapp": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "queryS3Data",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    }
+  }
 }

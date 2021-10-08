@@ -3,9 +3,7 @@ import {
   PieChart,
   Pie,
   Tooltip,
-  Sector,
   Cell,
-  ResponsiveContainer,
   Legend
 
 } from 'recharts';
@@ -17,15 +15,7 @@ import Typography from '@material-ui/core/Typography';
 
 import Prompt from '../graphPrompt';
 
-const data = [
-  {
-    name: 'Visitor',
-    value: 400
-  }, {
-    name: 'Friend',
-    value: 300
-  }
-];
+
 
 const data2 = [
   { name: 'Pizza', value: 400 },
@@ -34,8 +24,9 @@ const data2 = [
   { name: 'Home Cookin', value: 200 },
 ];
 
+const COLORS = ['#00e676', '#db4737'];
 
-const COLORS = ['#bfa721', '#00C49F', '#00C49F', '#00C49F'];
+const COLORS2 = ['#bfa721', '#db4737', '#00C49F', '#768dcf'];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
@@ -57,7 +48,7 @@ function Graph1() {
 
   const foodPrompt = Prompt( foodAnswerState,  'foodPrompt')
   
-
+  const responseWhoData = useSelector(state => state.s3Data.data)
 
   return (
     <div>
@@ -79,13 +70,15 @@ function Graph1() {
               dataKey="value"
               startAngle={360}
               endAngle={0}
-              data={data}
+              data={responseWhoData}
               cx="50%"
               cy="50%"
               outerRadius={80}
-              fill="#00e676"
+              fill  = "#00e676"
             
               label/>
+       
+          
           </PieChart>
 
         </MuiGrid>
@@ -106,8 +99,8 @@ function Graph1() {
             
             dataKey="value"
           >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index]} />
+            {data2.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS2[index]} />
             ))}
           </Pie>
           <Tooltip/>

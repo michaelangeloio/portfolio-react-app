@@ -1,8 +1,6 @@
-import React, {useState} from "react";
-import {Container, Row, Col} from "react-grid-system";
-import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
-import Carousel, {Modal, ModalGateway} from "react-images";
-import {Link} from "react-router-dom";
+import React from "react";
+import {Container} from "react-grid-system";
+
 
 // Auxillary Packages
 
@@ -14,21 +12,21 @@ import CountupGraph1 from "../common/graphs/countupGraph1";
 import Graph1 from "../common/graphs/graph1";
 import Graph2 from "../common/graphs/graph2";
 import Graph3 from "../common/graphs/graph3";
-import {Typography} from "@material-ui/core";
+
 
 function Stats() {
-  const [lightboxIsOpen,
-    setLightboxIsOpen] = useState(false);
-  const [selectedIndex,
-    setSelectedIndex] = useState(0);
+  // const [lightboxIsOpen,
+  //   setLightboxIsOpen] = useState(false);
+  // const [selectedIndex,
+  //   setSelectedIndex] = useState(0);
 
-  const toggleLightbox = (index) => {
-    setSelectedIndex(index);
-    setLightboxIsOpen(!lightboxIsOpen);
-  };
+  // const toggleLightbox = (index) => {
+  //   setSelectedIndex(index);
+  //   setLightboxIsOpen(!lightboxIsOpen);
+  // };
 
-  const [dp,
-    setDp] = useState(false);
+  // const [dp,
+  //   setDp] = useState(false);
 
   return (
 

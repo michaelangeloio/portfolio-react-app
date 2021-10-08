@@ -21,15 +21,12 @@ import Headline from "../common/headline";
 
 //Redux 
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import {playedGame } from '../../actions/playedGame';
 
 //MUI
 import Grid from '@material-ui/core/Grid';
 
-
-const DefaultLocation = { lat: 40.752336836965696, lng: -73.98232417652586};
-const DefaultZoom = 10;
 
 
 function Landing() {
@@ -55,20 +52,20 @@ function Landing() {
       let path = `/portfolio`; 
       history.push(path);
     }
-    const [lightboxIsOpen, setLightboxIsOpen] = useState(false);
-    const [selectedIndex, setSelectedIndex] = useState(0);
+    // const [lightboxIsOpen, setLightboxIsOpen] = useState(false);
+    // const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const toggleLightbox = (index) => {
-        setSelectedIndex(index);
-        setLightboxIsOpen(!lightboxIsOpen);
-    };
+    // const toggleLightbox = (index) => {
+    //     setSelectedIndex(index);
+    //     setLightboxIsOpen(!lightboxIsOpen);
+    // };
 
-    const [dp, setDp] = useState(false);
+    // const [dp, setDp] = useState(false);
 
 
     const [proceedButton1, setProceedButton] = useState(false);
-    const [firstPrompt, closeFirstPrompt] = useState(true);
-    const [firstQuestion, setFirstQuestion] = useState(false);
+    // const [firstPrompt, closeFirstPrompt] = useState(true);
+    // const [firstQuestion, setFirstQuestion] = useState(false);
   
 
  
@@ -84,7 +81,7 @@ function Landing() {
                     <Headline label="" title="Welcome" divider_1={true} position="center" />
                     <div className="div-center text-center">  
                     <Grid container direction="column" alignItems="center" style = {{marginTop: 30}}> 
-                {firstPrompt &&
+
                     <Popup
                         trigger={ <button><h2 > Enter </h2></button>}
                         modal
@@ -166,7 +163,7 @@ function Landing() {
                     </div>
                     )}
                 </Popup>
-                }
+                
                      </Grid>
                 </div> 
            

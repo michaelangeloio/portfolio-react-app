@@ -249,7 +249,7 @@ function PortfolioHidden() {
         setLightboxIsOpen(!lightboxIsOpen);
     };
 
-    const [dp, setDp] = useState(false);
+    // const [dp, setDp] = useState(false);
 
 
   
@@ -270,7 +270,7 @@ function PortfolioHidden() {
        
              
 
-                {dp &&
+
                     <Tabs className="el-tabs el-tabs-1" selectedTabClassName="active">
                         <TabList className="el-tabs-links">
                             {portfolio.map((category, categoryIndex) => (
@@ -302,7 +302,7 @@ function PortfolioHidden() {
                             </TabPanel>
                         ))}
                     </Tabs>     
-            }
+
                 </Container>
                 <ModalGateway>
                     {lightboxIsOpen ? (

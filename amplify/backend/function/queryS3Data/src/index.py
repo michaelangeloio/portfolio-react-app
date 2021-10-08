@@ -34,7 +34,7 @@ def streamReader(obj):
 def handler(event, context):
     print('received event:')
     print(event)
-    s3Data = get_s3_file_stream('marwebapp-test/FoodQuery/2021/10/06/e2c7daa7-9090-47ba-b97e-68bde029b844.csv')
+    s3Data = get_s3_file_stream('marwebappanalytics/test.csv')
 
     return {
       'statusCode': 200,
