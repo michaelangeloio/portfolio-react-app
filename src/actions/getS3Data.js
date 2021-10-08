@@ -1,5 +1,5 @@
 
-import Axios from 'axios';
+
 
 import {RETRIEVE_S3_DATA, RETRIEVE_S3_DATA_FAILURE} from './constants';
 
