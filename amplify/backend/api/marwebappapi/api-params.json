@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/items",
+      "lambdaFunction": "queryS3Data",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/items"
+    }
+  ],
+  "resourceName": "marwebappapi",
+  "apiName": "marwebappapi",
+  "functionArns": [
+    {
+      "lambdaFunction": "queryS3Data"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-marwebapp-dev-152921-authRole",
+    "unAuthRoleName": "amplify-marwebapp-dev-152921-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "queryS3Data",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

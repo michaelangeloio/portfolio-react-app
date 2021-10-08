@@ -16,7 +16,6 @@ import Typography from '@material-ui/core/Typography';
 import Prompt from '../graphPrompt';
 
 
-
 const data2 = [
   { name: 'Pizza', value: 400 },
   { name: 'Burger', value: 300 },
