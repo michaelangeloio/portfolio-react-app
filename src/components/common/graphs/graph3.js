@@ -13,6 +13,8 @@ import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 
+import timeConverter  from "../../api/timeConverter";
+
   const data = [
     {
       "value": 100,
@@ -55,12 +57,13 @@ function Graph3() {
  
      const formDataState = useSelector(state => state.gMapsDecodeData.loaded);
  
-
+     const reponseSport = useSelector(state => state.s3Data.data.sportquery);
+     const updatedUTCInt = parseInt(useSelector(state => state.s3Data.data.updatedtimestamp[0].arrival_timestamp));
 
    console.log("TESTING")
     // console.log(data.forEach((el, index) => el['fill'] = fillArr[index]));
    
-     const funnelData = data.map((v, index) => ({ "fill": fillArr[index], ...v}))
+     const funnelData = reponseSport.map((v, index) => ({ "fill": fillArr[index], ...v}))
 
      function getKeyByValue(object, value) {
       return Object.keys(object).find(key => object[key] === value);
@@ -101,7 +104,7 @@ function Graph3() {
     </MuiGrid>
     <MuiGrid  item style = {{marginBottom: 10, marginTop: 10}} align= "center">
           <Typography style = {{fontSize: 13}}>
-          Data Last Updated: 10-05-2021 </Typography>
+        Data Last Updated {timeConverter(updatedUTCInt)} </Typography>
         </MuiGrid>
     <MuiGrid  item style = {{marginBottom: 15, marginTop: 20}} align= "center">
           <Typography style = {{fontSize: 14}}>

@@ -3,13 +3,13 @@ import React from "react";
 import {Grid as MuiGrid} from '@material-ui/core/';
 import Typography from '@material-ui/core/Typography';
 import CountUp from 'react-countup';
-;
+import { useSelector } from "react-redux";
 
-const data = 12044;
+
 
 function CountupGraph1() {
 
-   
+  const responseCount = parseInt(useSelector( state => state.s3Data.data.countquery[0].session ))
   return (
 
 
@@ -31,17 +31,17 @@ function CountupGraph1() {
         </MuiGrid>
         <MuiGrid  item>
           <Typography variant = "h2" >
-          <CountUp end={data} duration={6}/>
+          <CountUp end={responseCount} duration={6}/>
           </Typography>
         </MuiGrid>
         <MuiGrid  item>
           <Typography variant = "h6" style = {{color: "#00e676"}} >
-          Unique Visitors
+          Visits to This Website
           </Typography>
         </MuiGrid>
         <MuiGrid  item>
           <Typography  style = {{color: "white", fontSize: 10}} >
-          on this website- cool!
+          that's a lot!
           </Typography>
         </MuiGrid>
      

@@ -49,7 +49,7 @@ import SportsGolfOutlined from '@material-ui/icons/SportsGolfOutlined';
 import SportsSoccerOutlined from '@material-ui/icons/SportsSoccerOutlined';
 
 //Redux
-import { addFormResponse, removeFormResponse } from '../../actions/question2Answer';
+import { addFormResponse, removeFormResponse, addFormResponseLoaded } from '../../actions/question2Answer';
 import { useDispatch, useSelector } from "react-redux";
 
 import  { Analytics } from 'aws-amplify';
@@ -98,6 +98,7 @@ const useStyles = makeStyles((theme) => ({
 
     function Question2()  {
 
+      
 
       const answerState2 = useSelector( state => state.formData.loaded)
       const formDataFinal = useSelector(state => state.formData)
@@ -111,9 +112,11 @@ const useStyles = makeStyles((theme) => ({
 
         const routeChange = () =>{ 
             let path = `/site_stats`; 
-            handleFinish();
+
+            dispatch(addFormResponseLoaded());
+            
             history.push(path);
-            console.log(formDataFinal.data.whoValue)
+            console.log("TeST ", JSON.stringify(formDataFinal.data.whoValue))
             Analytics.record({
               name: 'form_who', 
               // Attribute values must be strings
@@ -149,6 +152,9 @@ const useStyles = makeStyles((theme) => ({
       
         const handleNext = () => {
           setActiveStep((prevActiveStep) => prevActiveStep + 1);
+          if (activeStep === steps.length - 1) {
+            handleFinish();
+          }
         };
       
         const handleBack = () => {
@@ -173,7 +179,7 @@ const useStyles = makeStyles((theme) => ({
             basketball: false,
             football: false,
             track: false,
-            SportsGolf: false,
+            golf: false,
             soccer: false
           });
         

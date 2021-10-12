@@ -56,7 +56,8 @@ function Graph1() {
 
   const foodPrompt = Prompt( foodAnswerState,  'foodPrompt')
   
-  const responseWhoData = useSelector(state => state.s3Data.data)
+  const responseWhoData = useSelector(state => state.s3Data.data.whoquery)
+  const responseFoodData = useSelector(state => state.s3Data.data.foodquery)
 
   return (
     <div>
@@ -98,7 +99,7 @@ function Graph1() {
         <MuiGrid item style = {{marginTop: 10}}>
         <PieChart width={250} height={280}>
           <Pie
-            data={data2}
+            data={responseFoodData}
             cx="50%"
             cy="50%"
             labelLine={false}
@@ -107,7 +108,7 @@ function Graph1() {
             
             dataKey="value"
           >
-            {data2.map((entry, index) => (
+            {responseFoodData.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS2[index]} />
             ))}
           </Pie>

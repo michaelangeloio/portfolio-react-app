@@ -31,7 +31,41 @@ export const loadS3Data = () => async (dispatch) => {
     const apiData = await getData();
 
     console.log(apiData)
-    parseData(apiData)
+   
+
+    for ( var key of Object.keys(apiData)) {
+            console.log(key);
+            parseData(apiData[key]);
+
+    }
+    
+
+
+                const location = [];
+                apiData.locationquery.forEach(function (e){
+                    try {
+                      const cordsETL = [];
+                   
+                      cordsETL[0] = parseFloat(e.lng);
+                      cordsETL[1] = parseFloat(e.lat);
+                      const cordsETLObj = {coordinates : cordsETL};
+                      location.push(cordsETLObj)
+
+                    }
+                    catch (err) {
+                       
+                     console.log("ETL ERROR")
+                    }
+                }
+                )
+            apiData.locationqueryETL = location
+            
+
+            
+        
+    
+
+
 
     dispatch({
         type: RETRIEVE_S3_DATA,

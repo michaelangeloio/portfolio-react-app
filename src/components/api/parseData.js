@@ -5,7 +5,7 @@ export default function parseData (data) {
           console.log("SUCCESS")
         }
         catch (err) {
-            console.log(err)
+            console.log("COULD NOT CONVERT")
         }
     }
     )

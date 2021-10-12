@@ -1,4 +1,4 @@
-import { ADD_FORM_RESPONSE, REMOVE_FORM_RESPONSE } from "../actions/constants";
+import { ADD_FORM_RESPONSE, ADD_FORM_RESPONSE_LOADED, REMOVE_FORM_RESPONSE } from "../actions/constants";
 
 import  { state  as initialState } from './initialState'
 
@@ -10,7 +10,7 @@ export const formData = (state = initialState.formDataState, action) => {
             return {
                 ...state,
                 data: payload,
-                loaded: true,
+                loaded: false,
          
             }
         case REMOVE_FORM_RESPONSE:
@@ -18,6 +18,11 @@ export const formData = (state = initialState.formDataState, action) => {
                 ...state,
                 loaded: false,
                 
+            }
+        case ADD_FORM_RESPONSE_LOADED:
+            return {
+                ...state,
+                loaded: true,
             }
         default: 
             return state

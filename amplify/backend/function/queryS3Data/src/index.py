@@ -1,11 +1,14 @@
 
 import time
+import datetime
 import json
+
+from asyncio.queues import Queue
 from smart_open import open
 import os
 import csv
-
-
+import asyncio
+from concurrent import futures
 
 
 def get_s3_file_stream(s3_path):
@@ -20,21 +23,86 @@ def get_s3_file_stream(s3_path):
   
     return open(complete_s3_path, encoding='utf8')
 
-    
 
-def streamReader(obj):
+queueArr = [
+    {
+        'filename' : 'whoquery.csv'
+    }, {
+        'filename' : 'foodquery.csv'
+    },
+    {
+        'filename' : 'devicequery.csv'
+    },
+    {
+        'filename' : 'locationquery.csv'
+    },
+    {
+        'filename' : 'playedgame.csv'
+    },
+    {
+        'filename' : 'sportquery.csv'
+    },
+    {
+        'filename' : 'countquery.csv'
+    },
+    {
+        'filename' : 'updatedtimestamp.csv'
+    }
+
+]
+
+# queueArr = ['whoquery.csv', 'devicequery.csv']
+
+
+
+def streamReader(obj, filename):
     returnArr = []
     reader = csv.DictReader(obj)
     for row in reader:
         returnArr.append(row)
 
-    return (returnArr)
+    return ({ "responseName" : filename, "response" : returnArr } )
 
+
+def streamExecute(file):
+
+    ts = time.time()
+    st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
+    print("Executing stream at " + st)
+
+    filename = file.replace(".csv", "")
+
+    return streamReader(get_s3_file_stream('marwebappanalytics/' + file), filename)
+     
+
+def run_io_tasks_in_parallel(tasks):
+    finalObj = {}
+    with futures.ThreadPoolExecutor(max_workers=6) as executor:
+        future_to_url = dict((executor.submit(streamExecute, task['filename']), task)
+                         for task in tasks)
+
+    for future in futures.as_completed(future_to_url):
+        task = future_to_url[future]
+        if future.exception() is not None:
+            print(future.exception())
+        else:
+            print(future.result())
+            print(future)
+            result = future.result()
+            finalObj[result['responseName']] = result['response']
+
+    return finalObj
+
+
+            
 
 def handler(event, context):
     print('received event:')
     print(event)
-    s3Data = get_s3_file_stream('marwebappanalytics/test.csv')
+    # loop = asyncio.get_event_loop()
+    result =  run_io_tasks_in_parallel(queueArr)
+    
+    # s3Data = get_s3_file_stream('marwebappanalytics/test.csv')
 
     return {
       'statusCode': 200,
@@ -43,7 +111,7 @@ def handler(event, context):
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
       },
-      'body': json.dumps(streamReader(s3Data))
+      'body': json.dumps(result)
   }
 
 

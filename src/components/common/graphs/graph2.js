@@ -22,7 +22,7 @@ import {
   
   const markers = [
    
-    { markerOffset: -15, name: "La Paz", coordinates: [ -73.98232417652586,40.752336836965696] },
+    {  name: "La Paz", coordinates: [ -73.98232417652586,40.752336836965696] },
     { markerOffset: 25, name: "Brasilia", coordinates: [-47.8825, -15.7942] },
     { markerOffset: 25, name: "Santiago", coordinates: [-70.6693, -33.4489] },
     { markerOffset: 25, name: "Bogota", coordinates: [-74.0721, 4.711] },
@@ -143,11 +143,16 @@ function Graph2() {
   const locAddress = useSelector(state => state.gMapsDecodeData.data);
   
  
-     const locAddressState = useSelector(state => state.gMapsDecodeData.loaded);
+  const locAddressState = useSelector(state => state.gMapsDecodeData.loaded);
     
-    console.log(locAddressState) 
+  console.log(locAddressState) 
 
- 
+
+
+  const responsePlayedGame = useSelector(state => state.s3Data.data.playedgame);
+  const responseDevice = useSelector(state => state.s3Data.data.devicequery);
+  
+  const responseMarkers = useSelector(state => state.s3Data.data.locationqueryETL);
   return (
     <div>
       <MuiGrid container direction="column" alignItems="center" style = {{marginTop: 30}}>
@@ -165,14 +170,9 @@ function Graph2() {
             
         <LineChart
           width={370}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
+          height={400}
+          data={responsePlayedGame}
+        
         >
          
           <XAxis dataKey="name" />
@@ -182,9 +182,28 @@ function Graph2() {
        
           <Legend />
           <Line type="monotone" dataKey="Visits" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="Plays" stroke="#82ca9d" />
+          {/* <Line type="monotone" dataKey="Plays" stroke="#82ca9d" /> */}
         </LineChart>
         </MuiGrid>
+        <MuiGrid  item>
+            
+            <LineChart
+              width={370}
+              height={400}
+              data={responsePlayedGame}
+            
+            >
+             
+              <XAxis dataKey="name" />
+            
+               
+              <Tooltip labelStyle = {{color: "black"}}/>
+           
+              <Legend />
+              {/* <Line type="monotone" dataKey="Visits" stroke="#8884d8" activeDot={{ r: 8 }} /> */}
+              <Line type="monotone" dataKey="Plays" stroke="#82ca9d" activeDot={{ r: 8 }} />
+            </LineChart>
+            </MuiGrid>
 
         <MuiGrid  item style= {{marginTop: 20, marginBottom: 10}}>
           <Typography >
@@ -194,7 +213,7 @@ function Graph2() {
         <BarChart
           width={370}
           height={300}
-          data={data2}
+          data={responseDevice}
           margin={{
             top: 5,
             right: 30,
@@ -209,7 +228,7 @@ function Graph2() {
           <Tooltip labelStyle = {{color: "black"}}/>
        
          
-          <Bar dataKey="people" fill="#8884d8" />
+          <Bar dataKey="value" fill="#8884d8" />
         </BarChart>
         </MuiGrid>   
         <MuiGrid  item style= {{marginTop: 20, marginBottom: 10}}>
@@ -229,9 +248,9 @@ function Graph2() {
           geographies.map(geo => <Geography key={geo.rsmKey} geography={geo} fill = {"rgb(0, 230, 118)"} />)
         }
       </Geographies>
-      {markers.map(({ name, coordinates, markerOffset }) => (
+      {responseMarkers.map(({ name, coordinates, markerOffset }) => (
         <Marker key={name} coordinates={coordinates}>
-          <circle r={3} fill="#fff"  strokeWidth={2} />
+          <circle r={3} fill="#db6969"  strokeWidth={2} />
           <text
             textAnchor="middle"
             y={markerOffset}
