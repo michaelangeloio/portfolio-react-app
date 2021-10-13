@@ -149,10 +149,13 @@ function Graph2() {
 
 
 
-  const responsePlayedGame = useSelector(state => state.s3Data.data.playedgame);
+  const responsePlayedGame = useSelector(state => state.s3Data.data.playedgamequery);
+  const responseVisits = useSelector(state => state.s3Data.data.visitsquery);
   const responseDevice = useSelector(state => state.s3Data.data.devicequery);
   
   const responseMarkers = useSelector(state => state.s3Data.data.locationqueryETL);
+
+
   return (
     <div>
       <MuiGrid container direction="column" alignItems="center" style = {{marginTop: 30}}>
@@ -171,7 +174,7 @@ function Graph2() {
         <LineChart
           width={370}
           height={400}
-          data={responsePlayedGame}
+          data={responseVisits}
         
         >
          

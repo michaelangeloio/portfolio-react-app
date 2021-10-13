@@ -58,7 +58,7 @@ function Graph3() {
      const formDataState = useSelector(state => state.gMapsDecodeData.loaded);
  
      const reponseSport = useSelector(state => state.s3Data.data.sportquery);
-     const updatedUTCInt = parseInt(useSelector(state => state.s3Data.data.updatedtimestamp[0].arrival_timestamp));
+     const updatedUTCInt = parseInt(useSelector(state => state.s3Data.data.updatedtimestampquery[0].arrival_timestamp));
 
    console.log("TESTING")
     // console.log(data.forEach((el, index) => el['fill'] = fillArr[index]));

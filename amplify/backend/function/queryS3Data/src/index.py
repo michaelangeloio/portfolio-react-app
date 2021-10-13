@@ -37,7 +37,10 @@ queueArr = [
         'filename' : 'locationquery.csv'
     },
     {
-        'filename' : 'playedgame.csv'
+        'filename' : 'playedgamequery.csv'
+    },
+    {
+        'filename' : 'visitsquery.csv'
     },
     {
         'filename' : 'sportquery.csv'
@@ -46,7 +49,7 @@ queueArr = [
         'filename' : 'countquery.csv'
     },
     {
-        'filename' : 'updatedtimestamp.csv'
+        'filename' : 'updatedtimestampquery.csv'
     }
 
 ]
