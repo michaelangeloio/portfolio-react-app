@@ -24,6 +24,10 @@ import Question2 from "./components/landing/question2";
 
 // Posts import LeadvilleHalf from
 // "./deprecated_components/Posts_Endurance/leadville_half"; Common Components
+
+//Portfolio Posts
+import * as portfolioPages from './components/pages/portfoliopages/index';
+
 import Helmet from "./components/common/helmet";
 import PageSwitch from "./components/common/pageswitch";
 import RedirectAs404 from "./components/common/redirectas404";
@@ -35,7 +39,7 @@ import Analytics from '@aws-amplify/analytics';
 // import Auth from '@aws-amplify/auth'; import awsconfig from './aws-exports';
 // import { Logger } from 'aws-amplify'; Auxillary Packages
 import CookieConsent from "react-cookie-consent";
-import GetData from './components/api/GetS3Data';
+// import GetData from './components/api/GetS3Data';
 
 //REDUX
 import { useDispatch } from "react-redux";
@@ -45,7 +49,7 @@ import {loadS3Data} from "./actions/getS3Data";
 
 
 //TESTING
-import  {addGMapsResponse} from './actions/question1Answer';
+// import  {addGMapsResponse} from './actions/question1Answer';
 
 const routes = [
 
@@ -89,6 +93,23 @@ const routes = [
     component: <Question2/>
   },
 
+  //Portfolio Pages
+  {
+    path: "portfolio/statefarmwebportal",
+    component: <portfolioPages.statefarmwebportal/>
+  },
+  {
+    path: "portfolio/statefarmtemplateauto",
+    component: <portfolioPages.statefarmtemplateauto/>
+  },
+  {
+    path: "portfolio/petkick",
+    component: <portfolioPages.petkick/>
+  },
+  {
+    path: "portfolio/sheetscience",
+    component: <portfolioPages.sheetscience/>
+  }
 
   //TESTING 
  
@@ -100,16 +121,6 @@ function App() {
 
   const dispatch = useDispatch();
 
-  // FOR FUTURE USE
-  // const [s3Data,
-  //   setS3Data] = React.useState({hits: []});
-  // const [s3DataLoaded,
-  //   setS3DataLoaded] = React.useState(false);
-  // const handleS3Data = (data) => {
-  //   console.log('loading data')
-  //   setS3Data(data);
-  //   setS3DataLoaded(true);
-  // }
 
   useEffect(() => {
     function loadContent() {
@@ -117,6 +128,7 @@ function App() {
     }
     loadContent();
   }, [dispatch]);
+
 
   useEffect(() => {
 
@@ -192,7 +204,6 @@ function App() {
 
       <CookieConsent
         onAccept={() => {
-        alert("Accepted!");
         Analytics.record({name: 'Cookie Accept'});
       }}>
         This website uses cookies to enhance the user experience.</CookieConsent>

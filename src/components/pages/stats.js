@@ -1,6 +1,6 @@
+//CORE
 import React from "react";
 import {Container} from "react-grid-system";
-
 
 // Auxillary Packages
 
@@ -13,20 +13,17 @@ import Graph1 from "../common/graphs/graph1";
 import Graph2 from "../common/graphs/graph2";
 import Graph3 from "../common/graphs/graph3";
 
+//MUI
+
+import LinearProgress from '@material-ui/core/LinearProgress';
+import Grid from '@material-ui/core/Grid';
+
+//Redux
+import {useSelector} from 'react-redux';
 
 function Stats() {
-  // const [lightboxIsOpen,
-  //   setLightboxIsOpen] = useState(false);
-  // const [selectedIndex,
-  //   setSelectedIndex] = useState(0);
 
-  // const toggleLightbox = (index) => {
-  //   setSelectedIndex(index);
-  //   setLightboxIsOpen(!lightboxIsOpen);
-  // };
-
-  // const [dp,
-  //   setDp] = useState(false);
+  const s3LoadedState = useSelector(state => state.s3Data.loaded)
 
   return (
 
@@ -39,11 +36,25 @@ function Stats() {
             divider_1={true}
             position="center"/>
           <div className="div-center text-center"></div>
-          <CountupGraph1/>
 
-          <Graph1/>
-          <Graph2/>
-          <Graph3/>
+          {s3LoadedState
+            ? <> <CountupGraph1/> < Graph1 /> <Graph2/> < Graph3 /> </>
+            : <div>
+              <Grid
+                container
+                justifyContent="center"
+                direction="column"
+                alignItems="center"
+                >
+                <LinearProgress
+                  color="secondary"
+                  style={{
+                  width: 310, marginBottom: 30
+                }}/>
+                <Headline title="LOADING DATA" position="center"/>
+
+              </Grid>
+            </div>}
 
         </Container>
 

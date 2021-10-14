@@ -15,38 +15,38 @@ import Button from '@material-ui/core/Button';
 
 import timeConverter  from "../../api/timeConverter";
 
-  const data = [
-    {
-      "value": 100,
-      "name": "Baseball",
+  // const data = [
+  //   {
+  //     "value": 100,
+  //     "name": "Baseball",
 
-    },
-    {
-      "value": 80,
-      "name": "Basketball",
+  //   },
+  //   {
+  //     "value": 80,
+  //     "name": "Basketball",
   
-    },
-    {
-      "value": 50,
-      "name": "Football",
+  //   },
+  //   {
+  //     "value": 50,
+  //     "name": "Football",
 
-    },
-    {
-      "value": 40,
-      "name": "Track and Field",
+  //   },
+  //   {
+  //     "value": 40,
+  //     "name": "Track and Field",
 
-    },
-    {
-      "value": 26,
-      "name": "Golf",
+  //   },
+  //   {
+  //     "value": 26,
+  //     "name": "Golf",
   
-    },
-    {
-      "value": 26,
-      "name": "Soccer",
+  //   },
+  //   {
+  //     "value": 26,
+  //     "name": "Soccer",
   
-    }
-  ]
+  //   }
+  // ]
 
   const fillArr = ["#8884d8", "#83a6ed", "#8dd1e1", "#82ca9d", "#82ca9d", "#a4de6c"]
 function Graph3() {
@@ -82,8 +82,8 @@ function Graph3() {
          {formDataState ? <Typography variant="h5" align = "center"> So a favorite sport of yours is {getKeyByValue(formData.sportValue, true)}? </Typography> :   <Typography align="center">
               Looks like you have not played the game! To get the most out of this experience,
               please 
-              <Link href="/landing" color="inherit">
-                <Button variant="contained" color="success" style = {{margin: 4}}>play</Button>
+              <Link to="/landing" color="inherit">
+                <Button variant="contained"  style = {{margin: 4}}>play</Button>
               </Link>!</Typography>}
         </MuiGrid>
         <MuiGrid  item style = {{marginBottom: 10}} align= "center">

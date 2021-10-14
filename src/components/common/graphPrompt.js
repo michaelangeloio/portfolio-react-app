@@ -16,7 +16,7 @@ function prompt(state, promptType) {
               Looks like you have not played the game! To get the most out of this experience,
               please
               <Link href="/landing" color="inherit">
-                <Button variant="contained" color="success" style = {{margin: 4}}>play</Button>
+                <Button variant="contained"  style = {{margin: 4}}>play</Button>
               </Link>!</Typography>
           )
         } else {

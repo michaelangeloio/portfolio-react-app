@@ -20,120 +20,120 @@ import {
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
   
-  const markers = [
+  // const markers = [
    
-    {  name: "La Paz", coordinates: [ -73.98232417652586,40.752336836965696] },
-    { markerOffset: 25, name: "Brasilia", coordinates: [-47.8825, -15.7942] },
-    { markerOffset: 25, name: "Santiago", coordinates: [-70.6693, -33.4489] },
-    { markerOffset: 25, name: "Bogota", coordinates: [-74.0721, 4.711] },
-    { markerOffset: 25, name: "Quito", coordinates: [-78.4678, -0.1807] },
-    { markerOffset: -15, name: "Georgetown", coordinates: [-58.1551, 6.8013] },
-    { markerOffset: -15, name: "Asuncion", coordinates: [-57.5759, -25.2637] },
-    { markerOffset: 25, name: "Paramaribo", coordinates: [-55.2038, 5.852] },
-    { markerOffset: 25, name: "Montevideo", coordinates: [-56.1645, -34.9011] },
-    { markerOffset: -15, name: "Caracas", coordinates: [-66.9036, 10.4806] },
-    { markerOffset: -15, name: "Lima", coordinates: [-77.21231232, -12.0464] }
-  ];
+  //   {  name: "La Paz", coordinates: [ -73.98232417652586,40.752336836965696] },
+  //   { markerOffset: 25, name: "Brasilia", coordinates: [-47.8825, -15.7942] },
+  //   { markerOffset: 25, name: "Santiago", coordinates: [-70.6693, -33.4489] },
+  //   { markerOffset: 25, name: "Bogota", coordinates: [-74.0721, 4.711] },
+  //   { markerOffset: 25, name: "Quito", coordinates: [-78.4678, -0.1807] },
+  //   { markerOffset: -15, name: "Georgetown", coordinates: [-58.1551, 6.8013] },
+  //   { markerOffset: -15, name: "Asuncion", coordinates: [-57.5759, -25.2637] },
+  //   { markerOffset: 25, name: "Paramaribo", coordinates: [-55.2038, 5.852] },
+  //   { markerOffset: 25, name: "Montevideo", coordinates: [-56.1645, -34.9011] },
+  //   { markerOffset: -15, name: "Caracas", coordinates: [-66.9036, 10.4806] },
+  //   { markerOffset: -15, name: "Lima", coordinates: [-77.21231232, -12.0464] }
+  // ];
   
   
 
-const data = [
-    {
-      name: 'April',
-      Plays: 4000,
-      Visits: 2400,
-      amt: 2400,
-    },
-    {
-      name: 'February',
-      Plays: 3000,
-      Visits: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'March',
-      Plays: 2000,
-      Visits: 9800,
-      amt: 2290,
-    },
-    {
-      name: 'April',
-      Plays: 2780,
-      Visits: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'May',
-      Plays: 1890,
-      Visits: 4800,
-      amt: 2181,
-    },
-    {
-      name: 'June',
-      Plays: 2390,
-      Visits: 3800,
-      amt: 2500,
-    },
-    {
-      name: 'July',
-      Plays: 3490,
-      Visits: 4300,
-      amt: 2100,
-    },
-  ];
+// const data = [
+//     {
+//       name: 'April',
+//       Plays: 4000,
+//       Visits: 2400,
+//       amt: 2400,
+//     },
+//     {
+//       name: 'February',
+//       Plays: 3000,
+//       Visits: 1398,
+//       amt: 2210,
+//     },
+//     {
+//       name: 'March',
+//       Plays: 2000,
+//       Visits: 9800,
+//       amt: 2290,
+//     },
+//     {
+//       name: 'April',
+//       Plays: 2780,
+//       Visits: 3908,
+//       amt: 2000,
+//     },
+//     {
+//       name: 'May',
+//       Plays: 1890,
+//       Visits: 4800,
+//       amt: 2181,
+//     },
+//     {
+//       name: 'June',
+//       Plays: 2390,
+//       Visits: 3800,
+//       amt: 2500,
+//     },
+//     {
+//       name: 'July',
+//       Plays: 3490,
+//       Visits: 4300,
+//       amt: 2100,
+//     },
+//   ];
 
 
 
-const data2 = [
-    {
-      name: 'iPhone',
-      people: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: 'Macbook',
-      people: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'PC',
-      people: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: 'Android',
-      people: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'Android',
-      people: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'Android',
-      people: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'Android',
-      people: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'Android',
-      people: 2780,
-      pv: 3908,
-      amt: 2000,
-    }
-  ];
+// const data2 = [
+//     {
+//       name: 'iPhone',
+//       people: 4000,
+//       pv: 2400,
+//       amt: 2400,
+//     },
+//     {
+//       name: 'Macbook',
+//       people: 3000,
+//       pv: 1398,
+//       amt: 2210,
+//     },
+//     {
+//       name: 'PC',
+//       people: 2000,
+//       pv: 9800,
+//       amt: 2290,
+//     },
+//     {
+//       name: 'Android',
+//       people: 2780,
+//       pv: 3908,
+//       amt: 2000,
+//     },
+//     {
+//       name: 'Android',
+//       people: 2780,
+//       pv: 3908,
+//       amt: 2000,
+//     },
+//     {
+//       name: 'Android',
+//       people: 2780,
+//       pv: 3908,
+//       amt: 2000,
+//     },
+//     {
+//       name: 'Android',
+//       people: 2780,
+//       pv: 3908,
+//       amt: 2000,
+//     },
+//     {
+//       name: 'Android',
+//       people: 2780,
+//       pv: 3908,
+//       amt: 2000,
+//     }
+//   ];
 
 
   
@@ -239,7 +239,7 @@ function Graph2() {
               Looks like you have not played the game! To get the most out of this experience,
               please 
               <Link href="/landing" color="inherit">
-                <Button variant="contained" color="success" style = {{margin: 4}}>play</Button>
+                <Button variant="contained"  style = {{margin: 4}}>play</Button>
               </Link>!</Typography>} 
         </MuiGrid>
 
@@ -252,7 +252,7 @@ function Graph2() {
         }
       </Geographies>
       {responseMarkers.map(({ name, coordinates, markerOffset }) => (
-        <Marker key={name} coordinates={coordinates}>
+        <Marker  coordinates={coordinates}>
           <circle r={3} fill="#db6969"  strokeWidth={2} />
           <text
             textAnchor="middle"

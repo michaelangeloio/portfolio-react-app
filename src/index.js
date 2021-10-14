@@ -5,9 +5,8 @@ import * as serviceWorker from "./serviceWorker";
 // Stylesheet
 import "./index.scss";
 
-import React, { useEffect} from "react";
+import React from "react";
 import App from './App';
-import {Redirect, useRouteMatch } from "react-router-dom";
 
 
 //Posts
@@ -21,8 +20,8 @@ import Error404 from "./components/common/error404";
 
 //AWS
 
-import Amplify from 'aws-amplify';
-import Analytics from '@aws-amplify/analytics';
+// import Amplify from 'aws-amplify';
+// import Analytics from '@aws-amplify/analytics';
 // import Auth from '@aws-amplify/auth';
 
 // import awsconfig from './aws-exports';

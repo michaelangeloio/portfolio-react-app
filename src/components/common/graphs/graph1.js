@@ -25,14 +25,14 @@ import Prompt from '../graphPrompt';
 //   }
 // ];
 
-const data2 = [
-  { name: 'Pizza', value: 400 },
-  { name: 'Burger', value: 300 },
-  { name: 'Tea', value: 300 },
-  { name: 'Home Cookin', value: 200 },
-];
+// const data2 = [
+//   { name: 'Pizza', value: 400 },
+//   { name: 'Burger', value: 300 },
+//   { name: 'Tea', value: 300 },
+//   { name: 'Home Cookin', value: 200 },
+// ];
 
-const COLORS = ['#00e676', '#db4737'];
+// const COLORS = ['#00e676', '#db4737'];
 
 const COLORS2 = ['#bfa721', '#db4737', '#00C49F', '#768dcf'];
 
