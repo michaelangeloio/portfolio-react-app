@@ -10,7 +10,6 @@ function prompt(state, promptType) {
     case 'foodPrompt':
       try {
         if (state['foodValue'] === null) {
-          console.log("Game not played, printing default info");
           return (
             <Typography align="center">
               Looks like you have not played the game! To get the most out of this experience,

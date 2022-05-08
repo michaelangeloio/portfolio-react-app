@@ -2,7 +2,6 @@ import React from "react";
 
 function Icon(props) {
     const { label, title, small, subtitle, children, className } = props;
-
     return (
         <div className={`el-icon ${className}`}>
             <div className="el-icon-circle">

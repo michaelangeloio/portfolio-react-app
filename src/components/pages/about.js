@@ -14,7 +14,7 @@ function About() {
                         <Hidden xs sm md>
                             <Col lg={5}>
                                 <div className="about-image">
-                                    <div className="image overlay-image" style={{ backgroundImage: 'url(https://michaelangrivera-media.s3.us-east-2.amazonaws.com/portrait.png)' }}></div>
+                                    <div className="image overlay-image" style={{ backgroundImage: 'url(https://media.michaelangrivera.com/michaelangrivera/portrait.png)' }}></div>
                                 </div>
                             </Col>
                         </Hidden>

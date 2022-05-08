@@ -15,39 +15,6 @@ import Button from '@material-ui/core/Button';
 
 import timeConverter  from "../../api/timeConverter";
 
-  // const data = [
-  //   {
-  //     "value": 100,
-  //     "name": "Baseball",
-
-  //   },
-  //   {
-  //     "value": 80,
-  //     "name": "Basketball",
-  
-  //   },
-  //   {
-  //     "value": 50,
-  //     "name": "Football",
-
-  //   },
-  //   {
-  //     "value": 40,
-  //     "name": "Track and Field",
-
-  //   },
-  //   {
-  //     "value": 26,
-  //     "name": "Golf",
-  
-  //   },
-  //   {
-  //     "value": 26,
-  //     "name": "Soccer",
-  
-  //   }
-  // ]
-
   const fillArr = ["#8884d8", "#83a6ed", "#8dd1e1", "#82ca9d", "#82ca9d", "#a4de6c"]
 function Graph3() {
      // FOR FUTURE USE
@@ -59,19 +26,13 @@ function Graph3() {
  
      const reponseSport = useSelector(state => state.s3Data.data.sportquery);
      const updatedUTCInt = parseInt(useSelector(state => state.s3Data.data.updatedtimestampquery[0].arrival_timestamp));
-
-   console.log("TESTING")
-    // console.log(data.forEach((el, index) => el['fill'] = fillArr[index]));
    
      const funnelData = reponseSport.map((v, index) => ({ "fill": fillArr[index], ...v}))
 
      function getKeyByValue(object, value) {
       return Object.keys(object).find(key => object[key] === value);
     }
-    console.log(getKeyByValue(formData.sportValue, true))
 
- console.log(funnelData)
-    // .forEach((el, index) => el['fill'] = fillArr[index])
   return (
     <div>
       <MuiGrid container direction="column" alignItems="center" style = {{marginTop: 30}}>
@@ -102,6 +63,10 @@ function Graph3() {
       </Funnel>
     </FunnelChart>
     </MuiGrid>
+    <MuiGrid  item style = {{marginBottom: 10, marginTop: 10}} align= "center">
+          <Typography style = {{fontSize: 13}}>
+        Data Collection Started 12:00:00 PM 07/10/2021 </Typography>
+        </MuiGrid>
     <MuiGrid  item style = {{marginBottom: 10, marginTop: 10}} align= "center">
           <Typography style = {{fontSize: 13}}>
         Data Last Updated {timeConverter(updatedUTCInt)} </Typography>

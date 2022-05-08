@@ -22,7 +22,7 @@ function Post() {
                         </div>
                         <div className="post-body">
                             <div className="post-image">
-                                <img src="https://michaelangrivera-media.s3.us-east-2.amazonaws.com/State-Farm-Logo.png" alt="Single Post" />
+                                <img src="https://media.michaelangrivera.com/michaelangrivera/State-Farm-Logo.png" alt="Single Post" />
                             </div>
                             <div className="post-content">
                                 <p>Serving as an internal technical lead and developer for the Modernization “Portal” Effort:</p>

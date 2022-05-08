@@ -36,9 +36,6 @@ function Question1() {
     
   const answerState1 = useSelector( state => state.gMapsData.loaded)
 
-    console.log(answerState1)
-    console.log("test")
-
     const dispatch = useDispatch();
     
 
@@ -56,7 +53,6 @@ function Question1() {
       dispatch(addGMapsResponse(location));
       dispatch(fetchDecodeData(location));
       history.push(path);
-      console.log('clicked')
       
     }
     const handleQuestionRefresh = () => {

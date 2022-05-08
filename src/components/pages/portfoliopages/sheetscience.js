@@ -23,7 +23,7 @@ function Post() {
               <div className="post-body">
 
                 <img
-                  src="https://michaelangrivera-media.s3.us-east-2.amazonaws.com/sheetsciencetile.png"
+                  src="https://media.michaelangrivera.com/michaelangrivera/sheetsciencetile.png"
                   alt="Loading"/>
 
                 <div className="post-content">

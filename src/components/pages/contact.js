@@ -27,7 +27,7 @@ function Contact() {
                   <div
                     className="image overlay-image"
                     style={{
-                    backgroundImage: `url(https://michaelangrivera-media.s3.us-east-2.amazonaws.com/portrait.png)`
+                    backgroundImage: `url(https://media.michaelangrivera.com/michaelangrivera/portrait.png)`
                   }}></div>
                 </div>
               </Col>

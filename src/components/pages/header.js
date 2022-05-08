@@ -64,7 +64,7 @@ function Header() {
             <header className="app-header app-header-1">
                 <div className="header-logo" style={{ img: '#5cab86' }} >
                 <NavLink to="/">
-                <img src={'https://michaelangrivera-media.s3.us-east-2.amazonaws.com/logo.png'} alt="Logo" />
+                <img src={'https://media.michaelangrivera.com/michaelangrivera/logo.png'} alt="Logo" />
                             {/* <Link to={`url`.replace(/([^:])(\/\/+)/g, "$1/")}>Michael Angelo Rivera</Link> */}
                         
                 </NavLink>

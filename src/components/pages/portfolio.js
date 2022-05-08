@@ -19,56 +19,56 @@ const portfolio = [
         title: "Personal Project",
         link: "https://github.com/michaelangrivera/portfolio-react-app",
         subtitle: "This Website",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/test.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/test.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/test.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/test.png",
         externalURL: true
       }, {
         id: 1,
         title: "Professional Project",
         link: "portfolio/statefarmwebportal",
         subtitle: "Business Intillgence Web Portal",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/statefarmtile1.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/statefarmtile1.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/statefarmtile1.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/statefarmtile1.png",
         externalURL: false
       }, {
         id: 2,
         title: "Professional Project",
         link: "portfolio/statefarmtemplateauto",
         subtitle: "Template Automation",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/statefarmtile2.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/statefarmtile2.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/statefarmtile2.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/statefarmtile2.png",
         externalURL: false
       }, {
         id: 3,
         title: "Personal Project",
         subtitle: "SheetScience App",
         link: "portfolio/sheetscience",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/sheetsciencetile.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/sheetsciencetile.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/sheetsciencetile.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/sheetsciencetile.png",
         externalURL: false
       }, {
         id: 4,
         title: "Personal Project",
         subtitle: "AWS Athena Scheduler",
         link: "https://github.com/michaelangrivera/awsAthenaScheduler",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/athenascheduler.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/athenascheduler.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/athenascheduler.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/athenascheduler.png",
         externalURL: true
       }, {
         id: 5,
         title: "Personal Project",
         subtitle: "PetKick App",
         link: "portfolio/petkick",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/petkicktile.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/petkicktile.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/petkicktile.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/petkicktile.png",
         externalURL: false
       }, {
         id: 6,
         title: "Personal Project",
         subtitle: "React Linktree Clone",
         link: "https://github.com/michaelangrivera/react-linktree-clone",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/linktree-clone.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/linktree-clone.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/linktree-clone.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/linktree-clone.png",
         externalURL: true
       }
     ]
@@ -80,32 +80,32 @@ const portfolio = [
         title: "Personal Project",
         link: "https://github.com/michaelangrivera/portfolio-react-app",
         subtitle: "This Website",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/test.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/test.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/test.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/test.png",
         externalURL: true
       }, {
         id: 1,
         title: "Professional Project",
         link: "portfolio/statefarmwebportal",
         subtitle: "Business Intillgence Web Portal",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/statefarmtile1.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/statefarmtile1.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/statefarmtile1.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/statefarmtile1.png",
         externalURL: false
       }, {
         id: 3,
         title: "Personal Project",
         subtitle: "SheetScience App",
         link: "portfolio/sheetscience",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/sheetsciencetile.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/sheetsciencetile.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/sheetsciencetile.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/sheetsciencetile.png",
         externalURL: false
       }, {
         id: 6,
         title: "Personal Project",
         subtitle: "React Linktree Clone",
         link: "https://github.com/michaelangrivera/react-linktree-clone",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/linktree-clone.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/linktree-clone.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/linktree-clone.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/linktree-clone.png",
         externalURL: true
       }
 
@@ -119,8 +119,8 @@ const portfolio = [
         title: "Personal Project",
         subtitle: "PetKick App",
         link: "portfolio/petkick",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/petkicktile.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/petkicktile.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/petkicktile.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/petkicktile.png",
         externalURL: false
       }
     ]
@@ -132,16 +132,16 @@ const portfolio = [
         title: "Professional Project",
         link: "portfolio/statefarmtemplateauto",
         subtitle: "Template Automation",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/statefarmtile2.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/statefarmtile2.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/statefarmtile2.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/statefarmtile2.png",
         externalURL: false
       }, {
         id: 4,
         title: "Personal Project",
         subtitle: "AWS Athena Scheduler",
         link: "https://github.com/michaelangrivera/awsAthenaScheduler",
-        src: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/athenascheduler.png",
-        thumbnail: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/athenascheduler.png",
+        src: "https://media.michaelangrivera.com/michaelangrivera/athenascheduler.png",
+        thumbnail: "https://media.michaelangrivera.com/michaelangrivera/athenascheduler.png",
         externalURL: true
       }
     ]

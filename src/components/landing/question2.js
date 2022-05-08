@@ -116,26 +116,22 @@ const useStyles = makeStyles((theme) => ({
             dispatch(addFormResponseLoaded());
             
             history.push(path);
-            console.log("TeST ", JSON.stringify(formDataFinal.data.whoValue))
             Analytics.record({
               name: 'form_who', 
               // Attribute values must be strings
               attributes: { form_response: JSON.stringify(formDataFinal.data.whoValue) }
           });
 
-          console.log(formDataFinal.data.foodValue)
             Analytics.record({
               name: 'form_food', 
               // Attribute values must be strings
               attributes: { form_response: JSON.stringify(formDataFinal.data.foodValue) }
           });
-          console.log(formDataFinal.data.sportValue)
             Analytics.record({
               name: 'form_sport', 
               // Attribute values must be strings
               attributes: { form_response: JSON.stringify(formDataFinal.data.sportValue) }
           });
-          console.log(gMapsDataFinal.data)
             Analytics.record({
               name: 'form_location', 
               // Attribute values must be strings

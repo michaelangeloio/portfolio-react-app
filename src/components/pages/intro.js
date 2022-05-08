@@ -18,7 +18,7 @@ function Intro() {
     <section
       className="section section-hero section-hero-3 overlay-image"
       style={{
-      backgroundImage: `url(https://michaelangrivera-media.s3.us-east-2.amazonaws.com/main_photo.jpg)`
+      backgroundImage: `url(https://media.michaelangrivera.com/michaelangrivera/main_photo.jpg)`
     }}>
       <div className="display-center">
         <Container>

@@ -8,7 +8,7 @@ import Headline from "../components/common/headline";
 const posts = [
     {
         title: "Leadville Heavy Half Marathon",
-        image: "https://michaelangrivera-media.s3.us-east-2.amazonaws.com/endurance/leadville_half.jpg",
+        image: "https://media.michaelangrivera.com/michaelangrivera/endurance/leadville_half.jpg",
         date: "June 19th, 2021",
         link: "/leadville_half",
         icon: "ti-flag",

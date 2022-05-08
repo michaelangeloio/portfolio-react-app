@@ -26,7 +26,7 @@ function Post() {
               <div className="post-body">
 
                 <img
-                  src="https://michaelangrivera-media.s3.us-east-2.amazonaws.com/petkicktile.png"
+                  src="https://media.michaelangrivera.com/michaelangrivera/petkicktile.png"
                   alt="Single Post"/>
 
                 <div className="post-content">

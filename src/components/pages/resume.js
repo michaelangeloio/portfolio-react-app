@@ -77,14 +77,28 @@ const education = [
         description: "Oxford served as a freshman and sophomore liberal arts program transitioning to the Emory Atlanta Campus junior year. I had the privilege of taking a wide array of classes, from East Asian Religions to Contemporary U.S. Art History.",
         date: "(Aug 2015- May 2017)",
         icon: "ti-cup",
+    },
+    {
+        title: "Amazon Web Services",
+        subtitle: "Certified Cloud Practitioner | Atlanta, GA",
+        description: "With over 4 years of AWS Experience + a verified certificate, I still can't remember every AWS Service.",
+        date: "(Issued 2021)",
+        icon: "ti-desktop",
     }
 ];
 const experience = [
     {
+        title: "Software Engineer",
+        subtitle: "Xealth, Inc. | Remote/Seattle, WA",
+        description: "I'm currently a full stack developer for a digital health content startup! We connect patients, hospitals, and digital partners to make everyone's lives easier.",
+        date: "(2022- present)",
+        icon: "ti-desktop",
+    },
+    {
         title: "Full Stack Engineer/Data Analyst",
         subtitle: "State Farm | Atlanta, GA",
-        description: "Like a good neighbor, I help the State Farm BI Suite deliver meaningful data to business and customers. Hopefully this will save you a buck or two- if you have State Farm insurance. ",
-        date: "(2020- present)",
+        description: "Like a good neighbor, I helped the State Farm BI Suite deliver meaningful data to business and customers. Hopefully this will save you a buck or two- if you have State Farm insurance. ",
+        date: "(2020- 2022)",
         icon: "ti-server",
     },
     {

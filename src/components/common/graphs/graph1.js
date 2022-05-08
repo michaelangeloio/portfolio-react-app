@@ -51,8 +51,6 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
 function Graph1() {
   const foodAnswerState = useSelector( state => state.formData.data )
-  console.log("testing")
-  console.log(foodAnswerState)
 
   const foodPrompt = Prompt( foodAnswerState,  'foodPrompt')
   
